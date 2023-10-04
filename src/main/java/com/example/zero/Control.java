@@ -46,26 +46,27 @@ public class Control {
         yRotate.angleProperty().bind(angleY);
 
         scene.setOnMousePressed(event -> {
-            anchorX = -event.getSceneX();
-            anchorY = -event.getSceneY();
+            anchorX = event.getSceneX();
+            anchorY = event.getSceneY();
             anchorAngleX = angleX.get();
-            anchorAngleY = -angleY.get();
+            anchorAngleY = angleY.get();
+
         });
 
         scene.setOnMouseDragged(event -> {
-            angleX.set(anchorAngleX - (anchorY - event.getSceneY()));
-            angleY.set(anchorAngleY + anchorX - event.getSceneX());
+            angleX.set(-(anchorAngleX - (anchorY - event.getSceneY())));
+            angleY.set((anchorAngleY + anchorX - event.getSceneX()));
         });
     }
 
     private void scrollZoomHandler(){
         stage.addEventHandler(ScrollEvent.SCROLL, event -> {
-            double delta = event.getDeltaY();
+            double delta = -event.getDeltaY();
             group.translateZProperty().set(group.getTranslateZ() + delta);
         });
     }
 
-     private void keyboardEventHandler() {
+    private void keyboardEventHandler() {
         stage.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             switch (event.getCode()) {
                 case W -> camera.translateZProperty().set(camera.getTranslateZ() + 100);

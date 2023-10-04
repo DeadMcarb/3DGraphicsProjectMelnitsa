@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
+import javafx.scene.shape.Cylinder;
+import javafx.scene.shape.Sphere;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,6 +41,7 @@ public class HelloApplication extends Application {
         GroupExtended group = new GroupExtended();
         group.getChildren().add(box);
         group.getChildren().add(box2);
+        group.getChildren().addAll(outerCylinder, innerCylinder);
 
         Camera camera = new PerspectiveCamera(true);
         Scene scene = new Scene(group, 1440, 800, true);
