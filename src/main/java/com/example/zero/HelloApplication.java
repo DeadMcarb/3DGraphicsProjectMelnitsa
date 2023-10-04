@@ -17,13 +17,23 @@ public class HelloApplication extends Application {
 
         Box box = new Box(200, 20, 50);
         PhongMaterial material = new PhongMaterial(Color.ROYALBLUE);
-        material.setSpecularColor(Color.WHITE);
+        material.setSpecularColor(Color.ROYALBLUE);
         box.setMaterial(material);
 
         Box box2 = new Box(20, 50, 200);
-        PhongMaterial material2 = new PhongMaterial(Color.ROYALBLUE);
-        material2.setSpecularColor(Color.WHITE);
-        box2.setMaterial(material2);
+        box2.setMaterial(material);
+
+        Cylinder outerCylinder = new Cylinder(25, 100);
+        Cylinder innerCylinder = new Cylinder(20, 100);
+        PhongMaterial material3 = new PhongMaterial(Color.GRAY);
+        material3.setSpecularColor(Color.GRAY);
+        PhongMaterial material4 = new PhongMaterial(Color.rgb(255,1,1,0));
+        material4.setSpecularColor(Color.ROYALBLUE);
+        outerCylinder.setMaterial(material3);
+        innerCylinder.setMaterial(material4);
+
+
+
 
         GroupExtended group = new GroupExtended();
         group.getChildren().add(box);
