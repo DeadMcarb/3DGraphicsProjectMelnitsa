@@ -31,34 +31,11 @@ public class HelloApplication extends Application {
         camera.setNearClip(1);
         camera.setFarClip(1000);
 
-        stage.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
-            switch (event.getCode()) {
-                case W -> {
-                    camera.translateZProperty().set(camera.getTranslateZ() + 100);
-                }
-                case S -> {
-                    camera.translateZProperty().set(camera.getTranslateZ() - 100);
-                }
-                case A -> {
-                    camera.translateXProperty().set(camera.getTranslateY() + 10);
-                }
-                case D -> {
-                    camera.translateXProperty().set(camera.getTranslateY() - 10);
-                }
-                case LEFT -> {
-                    group.rotateByY(15);
-                }
-                case RIGHT -> {
-                    group.rotateByY(-15);
-                }
-                case UP -> {
-                    group.rotateByX(-15);
-                }
-                case DOWN -> {
-                    group.rotateByX(15);
-                }
-            }
-        });
+        group.rotateByX(15);
+        group.rotateByY(15);
+        Control control = new Control(scene, stage, camera, group);
+        control.EventHandler();
+        control.mouseEventHandler();
 
         stage.setTitle("3D PC!");
         stage.setScene(scene);
