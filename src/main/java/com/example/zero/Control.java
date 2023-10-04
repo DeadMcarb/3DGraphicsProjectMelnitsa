@@ -3,7 +3,9 @@ package com.example.zero;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.Camera;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 
 public class Control {
@@ -18,13 +20,20 @@ public class Control {
     Camera camera;
     GroupExtended group;
 
-    public Control(Stage stage, Camera camera, GroupExtended group){
+    public Control(Scene scene, Stage stage, Camera camera, GroupExtended group){
+        this.scene = scene;
         this.stage = stage;
         this.camera = camera;
         this.group = group;
     }
 
-    void mouseEventHandler(){
+    public void EventHandler() {
+        mouseEventHandler();
+        keyboardEventHandler();
+    }
+
+
+    private void mouseEventHandler(){
         Rotate xRotate;
         Rotate yRotate;
         group.getTransforms().addAll(
@@ -47,7 +56,7 @@ public class Control {
         });
     }
 
-    void EventHandler() {
+     private void keyboardEventHandler() {
         stage.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             switch (event.getCode()) {
                 case W -> {

@@ -1,8 +1,6 @@
 package com.example.zero;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Point3D;
 import javafx.scene.Camera;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
@@ -35,7 +33,6 @@ public class HelloApplication extends Application {
         group.rotateByY(15);
         Control control = new Control(scene, stage, camera, group);
         control.EventHandler();
-        control.mouseEventHandler();
 
         stage.setTitle("3D PC!");
         stage.setScene(scene);
