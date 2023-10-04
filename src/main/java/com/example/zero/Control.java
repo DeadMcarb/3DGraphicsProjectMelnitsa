@@ -31,6 +31,7 @@ public class Control {
     public void EventHandler() {
         mouseEventHandler();
         keyboardEventHandler();
+        scrollZoomHandler();
     }
 
 
