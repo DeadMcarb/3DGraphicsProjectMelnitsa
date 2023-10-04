@@ -17,6 +17,7 @@ public class HelloApplication extends Application {
 
         Box box = new Box(200, 20, 50);
         PhongMaterial material = new PhongMaterial(Color.ROYALBLUE);
+        material.setSpecularColor(Color.ROYALBLUE);
         box.setMaterial(material);
 
         GroupExtended group = new GroupExtended();
