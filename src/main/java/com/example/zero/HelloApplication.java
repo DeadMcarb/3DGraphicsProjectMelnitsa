@@ -4,15 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point3D;
 import javafx.scene.Camera;
-import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Box;
-import javafx.scene.shape.Sphere;
-import javafx.scene.transform.Rotate;
-import javafx.scene.transform.Transform;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +15,6 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        int rotate = 0;
 
         Box box = new Box(200, 20, 50);
         GroupExtended group = new GroupExtended();
@@ -66,7 +60,7 @@ public class HelloApplication extends Application {
             }
         });
 
-        stage.setTitle("Hello!");
+        stage.setTitle("3D PC!");
         stage.setScene(scene);
         stage.show();
     }
