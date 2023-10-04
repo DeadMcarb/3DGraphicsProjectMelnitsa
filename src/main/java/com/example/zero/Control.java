@@ -46,10 +46,10 @@ public class Control {
         yRotate.angleProperty().bind(angleY);
 
         scene.setOnMousePressed(event -> {
-            anchorX = event.getSceneX();
-            anchorY = event.getSceneY();
+            anchorX = -event.getSceneX();
+            anchorY = -event.getSceneY();
             anchorAngleX = angleX.get();
-            anchorAngleY = angleY.get();
+            anchorAngleY = -angleY.get();
         });
 
         scene.setOnMouseDragged(event -> {
@@ -60,9 +60,7 @@ public class Control {
 
     private void scrollZoomHandler(){
         stage.addEventHandler(ScrollEvent.SCROLL, event -> {
-            //Get how much scroll was done in Y axis.
             double delta = event.getDeltaY();
-            //Add it to the Z-axis location.
             group.translateZProperty().set(group.getTranslateZ() + delta);
         });
     }
@@ -70,30 +68,14 @@ public class Control {
      private void keyboardEventHandler() {
         stage.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             switch (event.getCode()) {
-                case W -> {
-                    camera.translateZProperty().set(camera.getTranslateZ() + 100);
-                }
-                case S -> {
-                    camera.translateZProperty().set(camera.getTranslateZ() - 100);
-                }
-                case A -> {
-                    camera.translateXProperty().set(camera.getTranslateX() + 10);
-                }
-                case D -> {
-                    camera.translateXProperty().set(camera.getTranslateX() - 10);
-                }
-                case LEFT -> {
-                    group.rotateByY(15);
-                }
-                case RIGHT -> {
-                    group.rotateByY(-15);
-                }
-                case UP -> {
-                    group.rotateByX(-15);
-                }
-                case DOWN -> {
-                    group.rotateByX(15);
-                }
+                case W -> camera.translateZProperty().set(camera.getTranslateZ() + 100);
+                case S -> camera.translateZProperty().set(camera.getTranslateZ() - 100);
+                case A -> camera.translateXProperty().set(camera.getTranslateX() + 10);
+                case D -> camera.translateXProperty().set(camera.getTranslateX() - 10);
+                case LEFT -> group.rotateByY(15);
+                case RIGHT -> group.rotateByY(-15);
+                case UP -> group.rotateByX(-15);
+                case DOWN -> group.rotateByX(15);
             }
         });
     }

@@ -17,14 +17,20 @@ public class HelloApplication extends Application {
 
         Box box = new Box(200, 20, 50);
         PhongMaterial material = new PhongMaterial(Color.ROYALBLUE);
-        material.setSpecularColor(Color.ROYALBLUE);
+        material.setSpecularColor(Color.WHITE);
         box.setMaterial(material);
+
+        Box box2 = new Box(20, 50, 200);
+        PhongMaterial material2 = new PhongMaterial(Color.ROYALBLUE);
+        material2.setSpecularColor(Color.WHITE);
+        box2.setMaterial(material2);
 
         GroupExtended group = new GroupExtended();
         group.getChildren().add(box);
+        group.getChildren().add(box2);
 
         Camera camera = new PerspectiveCamera(true);
-        Scene scene = new Scene(group, 1440, 800);
+        Scene scene = new Scene(group, 1440, 800, true);
         scene.setFill(Color.LIGHTPINK);
         scene.setCamera(camera);
         camera.translateXProperty().set(0);
@@ -35,7 +41,7 @@ public class HelloApplication extends Application {
         camera.setFarClip(1000);
 
         group.rotateByX(15);
-        group.rotateByY(15);
+        group.rotateByY(125);
         Control control = new Control(scene, stage, camera, group);
         control.EventHandler();
 
