@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.Camera;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 
@@ -53,6 +54,15 @@ public class Control {
         scene.setOnMouseDragged(event -> {
             angleX.set(anchorAngleX - (anchorY - event.getSceneY()));
             angleY.set(anchorAngleY + anchorX - event.getSceneX());
+        });
+    }
+
+    private void scrollZoomHandler(){
+        stage.addEventHandler(ScrollEvent.SCROLL, event -> {
+            //Get how much scroll was done in Y axis.
+            double delta = event.getDeltaY();
+            //Add it to the Z-axis location.
+            group.translateZProperty().set(group.getTranslateZ() + delta);
         });
     }
 
