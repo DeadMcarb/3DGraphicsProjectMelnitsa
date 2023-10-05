@@ -29,10 +29,10 @@ public class Cooler {
        this.on = on;
    }
    public void init() {
-       Cylinder cylinder = new Cylinder(20, 35);
-       PhongMaterial material4 = new PhongMaterial(Color.SADDLEBROWN);
-       material4.setSpecularColor(Color.SADDLEBROWN);
-       cylinder.setMaterial(material4);
+       Cylinder cylinder = new Cylinder(radius/5, 35);
+       PhongMaterial material = new PhongMaterial(Color.SADDLEBROWN);
+       material.setSpecularColor(Color.SADDLEBROWN);
+       cylinder.setMaterial(material);
        Rotate rotate = new Rotate(90, Rotate.X_AXIS);
        cylinder.getTransforms().add(rotate);
        GroupExtended propeller = new GroupExtended();

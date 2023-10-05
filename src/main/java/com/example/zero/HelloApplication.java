@@ -17,11 +17,10 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         GroupExtended mainGroup = new GroupExtended();
 
-        Box box = new Box(200, 20, 50);
         PhongMaterial material = new PhongMaterial(Color.ROYALBLUE);
         material.setSpecularColor(Color.ROYALBLUE);
+        Box box = new Box(200, 20, 50);
         box.setMaterial(material);
-
         Box box2 = new Box(20, 50, 200);
         box2.setMaterial(material);
 
