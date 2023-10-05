@@ -1,6 +1,7 @@
 package com.example.zero;
 
 import Components.CasePC;
+import Components.Radiator;
 import Components.VideoCard;
 import javafx.application.Application;
 import javafx.scene.*;
@@ -14,8 +15,11 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         GroupExtended mainGroup = new GroupExtended();
 
-        VideoCard videoCard = new VideoCard(0, 0, 0, 10, 0, 0, 0, mainGroup, true);
-        videoCard.init();
+//        VideoCard videoCard = new VideoCard(0, 0, 0, 10, 0, 0, 0, mainGroup, true);
+//        videoCard.init();
+
+        Radiator radiator = new Radiator(0, 0, 0, 100, 0, 0, 0, mainGroup);
+        radiator.init();
 
 //        CasePC case_PC = new CasePC(mainGroup, true);
 //        case_PC.init();
