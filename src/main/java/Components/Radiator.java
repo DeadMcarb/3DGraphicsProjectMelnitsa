@@ -3,6 +3,7 @@ package Components;
 import Elements.Panel;
 import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
 
 public class Radiator {
     int x, y, z, xAngle, yAngle, zAngle, width;
@@ -36,6 +37,13 @@ public class Radiator {
             radiator.getChildren().add(p1.getPanel());
             position += 6;
         }
+        radiator.translateXProperty().set(x);
+        radiator.translateYProperty().set(y);
+        radiator.translateZProperty().set(z);
+
+        radiator.getTransforms().add(new Rotate(xAngle, Rotate.X_AXIS));
+        radiator.getTransforms().add(new Rotate(yAngle, Rotate.Y_AXIS));
+        radiator.getTransforms().add(new Rotate(zAngle, Rotate.Z_AXIS));
 
         group.getChildren().add(radiator);
     }

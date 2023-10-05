@@ -4,6 +4,7 @@ import Elements.CylinderP;
 import Elements.Panel;
 import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
 
 public class VideoCard {
 
@@ -27,9 +28,16 @@ public class VideoCard {
     public void init(){
         GroupExtended videoCard = new GroupExtended();
         Cooler cooler = new Cooler(-122,0,0, 100, speed, 0,0,0, videoCard, on);
-        Cooler cooler2 = new Cooler(122,0,0, 100, speed, 0,0,0, videoCard, on);
         cooler.init();
+
+        Radiator radiator = new Radiator(-122, 0, -65, 180, 0, 0, 0, videoCard);
+        radiator.init();
+
+        Cooler cooler2 = new Cooler(122,0,0, 100, speed, 0,0,0, videoCard, on);
         cooler2.init();
+
+        Radiator radiator2 = new Radiator(122, 0, -65, 180, 0, 0, 0, videoCard);
+        radiator2.init();
 
 
         Panel middlePanel = new Panel(60, 240, 4, Color.rgb(64, 54, 52));
@@ -150,6 +158,14 @@ public class VideoCard {
         left_pane.setPosition(228, 0, 18);
         left_pane.setRotate(0,-9,90);
         videoCard.getChildren().add(left_pane.getPanel());
+
+        videoCard.translateXProperty().set(x);
+        videoCard.translateYProperty().set(y);
+        videoCard.translateZProperty().set(z);
+
+        videoCard.getTransforms().add(new Rotate(xAngle, Rotate.X_AXIS));
+        videoCard.getTransforms().add(new Rotate(yAngle, Rotate.Y_AXIS));
+        videoCard.getTransforms().add(new Rotate(zAngle, Rotate.Z_AXIS));
 
         group.getChildren().add(videoCard);
     }

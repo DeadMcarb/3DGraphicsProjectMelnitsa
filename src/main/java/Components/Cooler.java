@@ -54,6 +54,11 @@ public class Cooler {
        cooler.translateXProperty().set(x);
        cooler.translateYProperty().set(y);
        cooler.translateZProperty().set(z);
+
+       cooler.getTransforms().add(new Rotate(xAngle, Rotate.X_AXIS));
+       cooler.getTransforms().add(new Rotate(yAngle, Rotate.Y_AXIS));
+       cooler.getTransforms().add(new Rotate(zAngle, Rotate.Z_AXIS));
+
        group.getChildren().add(cooler);
    }
 
