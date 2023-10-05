@@ -46,7 +46,7 @@ public class VideoCard {
         front_right_brick.setRotate(0, 10, -45);
         videoCard.getChildren().add(front_right_brick.getPanel());
 
-        Panel topPanel = new Panel(460, 45, 10, Color.rgb(64, 54, 52));
+        Panel topPanel = new Panel(470, 45, 10, Color.rgb(64, 54, 52));
         topPanel.setPosition(0, -115, -4);
         topPanel.setRotate(90, 0, 0);
         videoCard.getChildren().add(topPanel.getPanel());
@@ -61,12 +61,12 @@ public class VideoCard {
         top_right_brick.setRotate(-280, -45, -15);
         videoCard.getChildren().add(top_right_brick.getPanel());
 
-        Panel front_left = new Panel(210, 30, 5, Color.SADDLEBROWN);
+        Panel front_left = new Panel(225, 30, 5, Color.SADDLEBROWN);
         front_left.setPosition(125, -105, 18);
         front_left.setRotate(-9,0,0);
         videoCard.getChildren().add(front_left.getPanel());
 
-        Panel front_right = new Panel(210, 30, 5, Color.SADDLEBROWN);
+        Panel front_right = new Panel(225, 30, 5, Color.SADDLEBROWN);
         front_right.setPosition(-125, -105, 18);
         front_right.setRotate(-9,0,0);
         videoCard.getChildren().add(front_right.getPanel());
@@ -91,17 +91,17 @@ public class VideoCard {
         с4.setRotate(0, 0, 145);
         videoCard.getChildren().add(с4.getPanel());
 
-        Panel bottomPanel = new Panel(460, 45, 10, Color.rgb(64, 54, 52));
+        Panel bottomPanel = new Panel(470, 45, 10, Color.rgb(64, 54, 52));
         bottomPanel.setPosition(0, 115, -4);
         bottomPanel.setRotate(90, 0, 0);
         videoCard.getChildren().add(bottomPanel.getPanel());
 
-        Panel front_left_bottom = new Panel(210, 30, 5, Color.SADDLEBROWN);
+        Panel front_left_bottom = new Panel(225, 30, 5, Color.SADDLEBROWN);
         front_left_bottom.setPosition(125, 105, 18);
         front_left_bottom.setRotate(9,0,0);
         videoCard.getChildren().add(front_left_bottom.getPanel());
 
-        Panel front_right_bottom = new Panel(210, 30, 5, Color.SADDLEBROWN);
+        Panel front_right_bottom = new Panel(225, 30, 5, Color.SADDLEBROWN);
         front_right_bottom.setPosition(-125, 105, 18);
         front_right_bottom.setRotate(9,0,0);
         videoCard.getChildren().add(front_right_bottom.getPanel());
@@ -121,11 +121,6 @@ public class VideoCard {
         bottom_left_brick.setRotate(100, 145,  -15);
         videoCard.getChildren().add(bottom_left_brick.getPanel());
 
-//        Panel top_right_brick = new Panel(20,54, 15, Color.SADDLEBROWN);
-//        top_right_brick.setPosition(-33, -117, -1.6);
-//        top_right_brick.setRotate(-280, -45, -15);
-//        videoCard.getChildren().add(top_right_brick.getPanel());
-
         Panel bottom_right_brick = new Panel(20,54, 15, Color.SADDLEBROWN);
         bottom_right_brick.setPosition(-28, 117, -2.5);
         bottom_right_brick.setRotate(-80, -35, 15);
@@ -134,6 +129,27 @@ public class VideoCard {
         CylinderP front_line = new CylinderP(2, 205, Color.SADDLEBROWN);
         front_line.setPosition(0, 0, 19);
         videoCard.getChildren().add(front_line.getCylinder());
+
+
+        Panel leftPanel = new Panel(240, 45, 10, Color.rgb(64, 54, 52));
+        leftPanel.setPosition(238, 0, -4);
+        leftPanel.setRotate(0, 90, 90);
+        videoCard.getChildren().add(leftPanel.getPanel());
+
+        Panel rightPanel = new Panel(240, 45, 10, Color.rgb(64, 54, 52));
+        rightPanel.setPosition(-238, 0, -4);
+        rightPanel.setRotate(0, 90, 90);
+        videoCard.getChildren().add(rightPanel.getPanel());
+
+        Panel right_pane = new Panel(240, 30, 5, Color.SADDLEBROWN);
+        right_pane.setPosition(-228, 0, 18);
+        right_pane.setRotate(0,9,90);
+        videoCard.getChildren().add(right_pane.getPanel());
+
+        Panel left_pane = new Panel(240, 30, 5, Color.SADDLEBROWN);
+        left_pane.setPosition(228, 0, 18);
+        left_pane.setRotate(0,-9,90);
+        videoCard.getChildren().add(left_pane.getPanel());
 
         group.getChildren().add(videoCard);
     }
