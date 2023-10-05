@@ -1,10 +1,8 @@
 package com.example.zero;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.scene.Camera;
-import javafx.scene.Group;
-import javafx.scene.PerspectiveCamera;
-import javafx.scene.Scene;
+import javafx.scene.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.*;
@@ -25,31 +23,27 @@ public class HelloApplication extends Application {
         Box box2 = new Box(20, 50, 200);
         box2.setMaterial(material);
 
-        Cylinder center = new Cylinder(20, 35);
+        Cylinder cylinder = new Cylinder(20, 35);
         PhongMaterial material4 = new PhongMaterial(Color.SADDLEBROWN);
         material4.setSpecularColor(Color.SADDLEBROWN);
-        center.setMaterial(material4);
+        cylinder.setMaterial(material4);
         Rotate rotate = new Rotate(90, Rotate.X_AXIS);
-        center.getTransforms().add(rotate);
+        cylinder.getTransforms().add(rotate);
 
-
-
-
-
-//        group.getChildren().add(box2);
-
-//        drawBlade(100, 90, group);
 
         GroupExtended cooler = new GroupExtended();
         drawCircle(100, 35, cooler);
-        drawBlade(100, 1, 0, cooler);
-        drawBlade(100, -1, 0, cooler);
-        drawBlade(100, 1, 90, cooler);
-        drawBlade(100, -1,90, cooler);
+        drawBlade(100,1, 0, cooler);
+        drawBlade(100,1, 60, cooler);
+        drawBlade(100,1, 120, cooler);
+        drawBlade(100,1, 180, cooler);
+        drawBlade(100,-1, 60, cooler);
+        drawBlade(100,-1, 120, cooler);
+
+
 
         GroupExtended group = new GroupExtended();
-        group.getChildren().add(center);
-        group.getChildren().add(cooler);
+        group.getChildren().add(cylinder);
 
         Camera camera = new PerspectiveCamera(true);
         Scene scene = new Scene(group, 1440, 800, true);
@@ -57,10 +51,10 @@ public class HelloApplication extends Application {
         scene.setCamera(camera);
         camera.translateXProperty().set(0);
         camera.translateYProperty().set(0);
-        camera.translateZProperty().set(-500);
+        camera.translateZProperty().set(-750);
 
         camera.setNearClip(1);
-        camera.setFarClip(1000);
+        camera.setFarClip(10000);
 
         group.rotateByX(15);
         group.rotateByY(125);
@@ -102,13 +96,6 @@ public class HelloApplication extends Application {
         }
     }
 
-    public static int getMaxABS(int[] a){
-        int x = Math.abs(a[0]);
-        int y = Math.abs(a[1]);
-        if (x > y) return a[0];
-
-        return a[1];
-    }
 
     public static void drawBlade(int radius, int ox, int rAngle, GroupExtended group){
         Group blade = new Group();
@@ -137,8 +124,24 @@ public class HelloApplication extends Application {
         }
 
         if (rAngle > 0) blade.getTransforms().add(new Rotate(rAngle + 360, Rotate.Z_AXIS));
+        if(ox < 0) {
+            //prepareAnimation(blade, rAngle);
+        }
         group.getChildren().add(blade);
+
     }
+
+    private static void prepareAnimation(Node obj, int rAngle) {
+        AnimationTimer timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                obj.getTransforms().add(new Rotate(obj.getRotate()+0.1, Rotate.Y_AXIS));
+
+            }
+        };
+        timer.start();
+    }
+
 
     public static void main(String[] args) {
         launch();
