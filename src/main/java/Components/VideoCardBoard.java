@@ -27,14 +27,14 @@ public class VideoCardBoard {
         Panel board = new Panel(500, 240, 8, Color.rgb(64, 54, 52));
         videoCardBoard.getChildren().add(board.getPanel());
 
-        Panel  pci = new Panel(230, 50, 8, Color.rgb(64, 54, 52));
-        pci.setPosition(80, 120, 0);
+        Panel  pci = new Panel(190, 50, 8, Color.rgb(64, 54, 52));
+        pci.setPosition(60, 120, 0);
         videoCardBoard.getChildren().add(pci.getPanel());
 
-        int width = 200;
-        int position = -((width-4) / 2) + 90;
+        int width = 190;
+        int position = -((width-4) / 2) + 63;
         for (int i = 1; i <= 16; i++) {
-            Panel p1 = new Panel(14, 8, 6, Color.GOLD);
+            Panel p1 = new Panel(14, 7, 6, Color.GOLD);
             p1.setSpecular(Color.GOLD);
             p1.setPosition(position, 139, 2);
             p1.setRotate(0, 0,90);

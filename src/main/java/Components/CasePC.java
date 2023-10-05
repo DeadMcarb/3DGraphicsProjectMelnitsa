@@ -4,6 +4,8 @@ import Elements.Panel;
 import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
 
+import java.util.Random;
+
 public class CasePC {
     GroupExtended group;
     boolean on;
@@ -14,19 +16,19 @@ public class CasePC {
     }
 
     public void init() {
-        Panel back_left_cage = new Panel(10, 800, 10, Color.RED);
+        Panel back_left_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
         back_left_cage.setPosition(-150, 0, -400);
         group.getChildren().add(back_left_cage.getPanel());
 
-        Panel back_right_cage = new Panel(10, 800, 10, Color.BLUE);
+        Panel back_right_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
         back_right_cage.setPosition(-150, 0, 400);
         group.getChildren().add(back_right_cage.getPanel());
 
-        Panel front_left_cage = new Panel(10, 800, 10, Color.YELLOW);
+        Panel front_left_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
         front_left_cage.setPosition(150, 0, -400);
         group.getChildren().add(front_left_cage.getPanel());
 
-        Panel front_right_cage = new Panel(10, 800, 10, Color.GREEN);
+        Panel front_right_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
         front_right_cage.setPosition(150, 0, 400);
         group.getChildren().add(front_right_cage.getPanel());
 
@@ -47,10 +49,16 @@ public class CasePC {
         front_cover.setPosition(150, 0, 0);
 //        group.getChildren().add(front_cover.getPanel());
 
+
+
+
         initCoolers();
         initPowerSupply();
         initMotherboard();
+
     }
+
+
 
     private void initCoolers() {
         Cooler cooler = new Cooler(0,-220,400, 100, 1, 0,0,0, group, true);
@@ -67,7 +75,7 @@ public class CasePC {
         powerSupply.init();
     }
     private void initMotherboard() {
-        Motherboard motherboard = new Motherboard(0, 0, 0, 0, 0, 0, group, true);
+        Motherboard motherboard = new Motherboard(0, 0, -40, 0, 0, 0, group, true);
         motherboard.init();
     }
 
