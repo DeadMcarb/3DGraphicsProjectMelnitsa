@@ -4,6 +4,7 @@ import Components.CasePC;
 import Components.Motherboard;
 import Components.Radiator;
 import Components.VideoCard;
+import RadioComponents.Chip;
 import javafx.application.Application;
 import javafx.scene.*;
 import javafx.scene.paint.Color;
@@ -16,13 +17,16 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         GroupExtended mainGroup = new GroupExtended();
 
-        VideoCard videoCard = new VideoCard(0, 0, 0, 10, 270, 0, 90, mainGroup, true);
-        videoCard.init();
+//        VideoCard videoCard = new VideoCard(0, 0, 0, 10, 0, 0, 0, mainGroup, true);
+//        videoCard.init();
+
+        Chip chipset = new Chip(0, 0, 0, 40, 80, 0, 0, 0, mainGroup);
+        chipset.init();
 
 
 
-        CasePC case_PC = new CasePC(mainGroup, true);
-        case_PC.init();
+//        CasePC case_PC = new CasePC(mainGroup, true);
+//        case_PC.init();
 
 
         Camera camera = new PerspectiveCamera(true);
