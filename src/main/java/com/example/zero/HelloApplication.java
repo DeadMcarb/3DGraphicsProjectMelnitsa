@@ -23,23 +23,10 @@ public class HelloApplication extends Application {
         Box box2 = new Box(20, 50, 200);
         box2.setMaterial(material);
 
-        Cylinder cylinder = new Cylinder(20, 35);
-        PhongMaterial material4 = new PhongMaterial(Color.SADDLEBROWN);
-        material4.setSpecularColor(Color.SADDLEBROWN);
-        cylinder.setMaterial(material4);
-        Rotate rotate = new Rotate(90, Rotate.X_AXIS);
-        cylinder.getTransforms().add(rotate);
-
-
-        GroupExtended cooler = new GroupExtended();
-        drawCircle(100, 35, cooler);
-        drawBlade(100,1, 0, cooler);
-        drawBlade(100,1, 60, cooler);
-        drawBlade(100,1, 120, cooler);
-        drawBlade(100,1, 180, cooler);
-        drawBlade(100,-1, 60, cooler);
-        drawBlade(100,-1, 120, cooler);
-
+        Cooler cooler = new Cooler(0,0,0, 80, 1, 0,0,0, mainGroup, true);
+        Cooler cooler2 = new Cooler(220,0,0, 100, 10, 0,0,0, mainGroup, false);
+        cooler.init();
+        cooler2.init();
 
 
         GroupExtended group = new GroupExtended();
