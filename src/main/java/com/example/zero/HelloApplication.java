@@ -1,6 +1,8 @@
 package com.example.zero;
 
+import Components.CasePC;
 import Components.Cooler;
+import Components.VideoCard;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.*;
@@ -17,17 +19,11 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         GroupExtended mainGroup = new GroupExtended();
 
-        PhongMaterial material = new PhongMaterial(Color.ROYALBLUE);
-        material.setSpecularColor(Color.ROYALBLUE);
-        Box box = new Box(200, 20, 50);
-        box.setMaterial(material);
-        Box box2 = new Box(20, 50, 200);
-        box2.setMaterial(material);
+//        VideoCard videoCard = new VideoCard(0, 0, 0, 10, 0, 0, 0, mainGroup, true);
+//        videoCard.init();
 
-        Cooler cooler = new Cooler(0,0,0, 80, 1, 0,0,0, mainGroup, true);
-        Cooler cooler2 = new Cooler(220,0,0, 100, 10, 0,0,0, mainGroup, false);
-        cooler.init();
-        cooler2.init();
+        CasePC case_PC = new CasePC(mainGroup, true);
+        case_PC.init();
 
 
         Camera camera = new PerspectiveCamera(true);
@@ -36,7 +32,7 @@ public class HelloApplication extends Application {
         scene.setCamera(camera);
         camera.translateXProperty().set(0);
         camera.translateYProperty().set(0);
-        camera.translateZProperty().set(-750);
+        camera.translateZProperty().set(-2500);
 
         camera.setNearClip(1);
         camera.setFarClip(10000);
@@ -50,9 +46,6 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
-
-
 
 
     public static void main(String[] args) {

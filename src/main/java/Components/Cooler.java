@@ -72,7 +72,7 @@ public class Cooler {
                 box = new Box(16, radius * 2 + 16, height);
             }
             PhongMaterial material = new PhongMaterial(Color.BEIGE);
-            material.setSpecularColor(Color.ROYALBLUE);
+            material.setSpecularColor(Color.BLACK);
             box.setMaterial(material);
             box.translateXProperty().set(x);
             box.translateYProperty().set(y);
