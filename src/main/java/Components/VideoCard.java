@@ -159,6 +159,9 @@ public class VideoCard {
         left_pane.setRotate(0,-9,90);
         videoCard.getChildren().add(left_pane.getPanel());
 
+        VideoCardBoard cardBoard = new VideoCardBoard(0, 0, -75, 0, 0, 0, videoCard);
+        cardBoard.init();
+
         videoCard.translateXProperty().set(x);
         videoCard.translateYProperty().set(y);
         videoCard.translateZProperty().set(z);
