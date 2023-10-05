@@ -9,7 +9,7 @@ import javafx.scene.transform.Transform;
 
 public class Panel {
     private Box box;
-    public Panel(int width, int height, int depth, Color color){
+    public Panel(double width, double height, double depth, Color color){
         box = new Box(width, height, depth);
         PhongMaterial material = new PhongMaterial(color);
         material.setSpecularColor(Color.BLACK);
@@ -19,7 +19,7 @@ public class Panel {
     public Box getPanel(){
         return box;
     }
-    public Box setPosition(int x, int y, int z) {
+    public Box setPosition(double x, double y, double z) {
         box.translateXProperty().set(x);
         box.translateYProperty().set(y);
         box.translateZProperty().set(z);
@@ -27,7 +27,7 @@ public class Panel {
         return box;
     }
 
-    public Box setRotate(int xAngle, int yAngle, int zAngle){
+    public Box setRotate(double xAngle, double yAngle, double zAngle){
         box.getTransforms().add(new Rotate(xAngle, Rotate.X_AXIS));
         box.getTransforms().add(new Rotate(yAngle, Rotate.Y_AXIS));
         box.getTransforms().add(new Rotate(zAngle, Rotate.Z_AXIS));
