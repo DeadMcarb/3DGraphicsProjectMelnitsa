@@ -2,6 +2,7 @@ package com.example.zero;
 
 import javafx.application.Application;
 import javafx.scene.Camera;
+import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -34,12 +35,21 @@ public class HelloApplication extends Application {
 
 
 
+
+//        group.getChildren().add(box2);
+
+//        drawBlade(100, 90, group);
+
+        GroupExtended cooler = new GroupExtended();
+        drawCircle(100, 35, cooler);
+        drawBlade(100, 1, 0, cooler);
+        drawBlade(100, -1, 0, cooler);
+        drawBlade(100, 1, 90, cooler);
+        drawBlade(100, -1,90, cooler);
+
         GroupExtended group = new GroupExtended();
         group.getChildren().add(center);
-//        group.getChildren().add(box2);
-        drawCircle(100, 35, group);
-//        drawBlade(100, 90, group);
-        drawBlade(100, 0, group);
+        group.getChildren().add(cooler);
 
         Camera camera = new PerspectiveCamera(true);
         Scene scene = new Scene(group, 1440, 800, true);
@@ -92,36 +102,42 @@ public class HelloApplication extends Application {
         }
     }
 
-    public static void drawBlade(int radius, int rotate, GroupExtended group){
-        int width = 1;
+    public static int getMaxABS(int[] a){
+        int x = Math.abs(a[0]);
+        int y = Math.abs(a[1]);
+        if (x > y) return a[0];
+
+        return a[1];
+    }
+
+    public static void drawBlade(int radius, int ox, int rAngle, GroupExtended group){
+        Group blade = new Group();
+        int width = Math.abs(ox);
         //max - 50
         //min will be 25
         double height = 25;
         int length = radius - 25;   //blade length
-        int n = length / width;     //get polygon amount
+        int n = length / Math.abs(width);     //get polygon amount
         double angle = -35;            //start angle
         double angleStep = (double) 60 / n; //get angle step
-        int x = 10;
-        int y = 0;
+        int x = ox*10;
         double heightStep = 30.0 / n;
-        System.out.println(angleStep);
 
         for (int i = 0; i < n; i++) {
             Box box = new Box(height, width, 1);
-            x+=width;
+            x+=ox;
             box.translateYProperty().set(x);
             angle += angleStep;
-//            box.getTransforms().add();
-            box.getTransforms().addAll(new Rotate(-angle, Rotate.Y_AXIS));
+            box.getTransforms().add(new Rotate(-angle, Rotate.Y_AXIS));
             PhongMaterial material = new PhongMaterial(Color.SADDLEBROWN);
             material.setSpecularColor(Color.BLACK);
             box.setMaterial(material);
-            box.setRotate(-rotate);
-            group.getChildren().add(box);
+            blade.getChildren().add(box);
             height += heightStep;
         }
 
-        group.setRotate(rotate);
+        if (rAngle > 0) blade.getTransforms().add(new Rotate(rAngle + 360, Rotate.Z_AXIS));
+        group.getChildren().add(blade);
     }
 
     public static void main(String[] args) {
