@@ -3,8 +3,6 @@ package Components;
 import Elements.Panel;
 import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.PhongMaterial;
-import javafx.scene.shape.Box;
 
 public class CasePC {
     GroupExtended group;
@@ -49,11 +47,12 @@ public class CasePC {
         front_cover.setPosition(150, 0, 0);
 //        group.getChildren().add(front_cover.getPanel());
 
-        initCoolers(group);
-
+        initCoolers();
+        initPowerSupply();
+        initMotherboard();
     }
 
-    private void initCoolers(GroupExtended group) {
+    private void initCoolers() {
         Cooler cooler = new Cooler(0,-220,400, 100, 1, 0,0,0, group, true);
         Cooler cooler2 = new Cooler(0,0,400, 100, 1, 0,0,0, group, true);
         Cooler cooler3 = new Cooler(0,220,400, 100, 1, 0,0,0, group, true);
@@ -63,4 +62,13 @@ public class CasePC {
         cooler3.init();
         cooler4.init();
     }
+    private void initPowerSupply() {
+        PowerSupply powerSupply = new PowerSupply(group, true);
+        powerSupply.init();
+    }
+    private void initMotherboard() {
+        Motherboard motherboard = new Motherboard(0, 0, 0, 0, 0, 0, group, true);
+        motherboard.init();
+    }
+
 }
