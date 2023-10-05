@@ -84,13 +84,13 @@ public class Cooler {
     private static void drawBlade(int radius, int ox, int rAngle, GroupExtended group){
         Group blade = new Group();
         int width = Math.abs(ox);
-        double height = 25;
+        double height = radius / 4;
         int length = radius - 25;
         int n = length / Math.abs(width);
         double angle = -35;
         double angleStep = (double) 60 / n;
         int x = ox*10;
-        double heightStep = 30.0 / n;
+        double heightStep = (height + 5) / n;
 
         for (int i = 0; i < n; i++) {
             Box box = new Box(height, width, 1);
