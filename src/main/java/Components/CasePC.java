@@ -16,6 +16,8 @@ public class CasePC {
     }
 
     public void init() {
+
+
         Panel back_left_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
         back_left_cage.setPosition(-150, 0, -400);
         group.getChildren().add(back_left_cage.getPanel());

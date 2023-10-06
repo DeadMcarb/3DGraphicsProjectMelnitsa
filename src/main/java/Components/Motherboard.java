@@ -2,6 +2,7 @@ package Components;
 
 import Elements.CylinderP;
 import Elements.Panel;
+import RadioComponents.ConnectorRAM;
 import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
@@ -191,105 +192,10 @@ public class Motherboard {
         powerConnectorPCIE4.setPosition(-130, -35, -260);
         motherboard.getChildren().add(powerConnectorPCIE4.getPanel());
 
-        Panel powerConnectorA_1RAM = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorA_1RAM.setRotate(0, 0, 90);
-        powerConnectorA_1RAM.setPosition(-130, -200, 0);
-        motherboard.getChildren().add(powerConnectorA_1RAM.getPanel());
 
-        Panel powerConnectorA_1RAM1 = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorA_1RAM1.setRotate(0, 0, 90);
-        powerConnectorA_1RAM1.setPosition(-130, -200, 10);
-        motherboard.getChildren().add(powerConnectorA_1RAM1.getPanel());
-
-        Panel powerConnectorA_1RAM2 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorA_1RAM2.setRotate(90, 0, 90);
-        powerConnectorA_1RAM2.setPosition(-130, -310, 5);
-        motherboard.getChildren().add(powerConnectorA_1RAM2.getPanel());
-
-        Panel powerConnectorA_1RAM3 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorA_1RAM3.setRotate(90, 0, 90);
-        powerConnectorA_1RAM3.setPosition(-130, -190, 5);
-        motherboard.getChildren().add(powerConnectorA_1RAM3.getPanel());
-
-        Panel powerConnectorA_1RAM4 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorA_1RAM4.setRotate(90, 0, 90);
-        powerConnectorA_1RAM4.setPosition(-130, -90, 5);
-        motherboard.getChildren().add(powerConnectorA_1RAM4.getPanel());
-
-        Panel powerConnectorB_1RAM = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorB_1RAM.setRotate(0, 0, 90);
-        powerConnectorB_1RAM.setPosition(-130, -200, 20);
-        motherboard.getChildren().add(powerConnectorB_1RAM.getPanel());
-
-        Panel powerConnectorB_1RAM1 = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorB_1RAM1.setRotate(0, 0, 90);
-        powerConnectorB_1RAM1.setPosition(-130, -200, 30);
-        motherboard.getChildren().add(powerConnectorB_1RAM1.getPanel());
-
-        Panel powerConnectorB_1RAM2 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorB_1RAM2.setRotate(90, 0, 90);
-        powerConnectorB_1RAM2.setPosition(-130, -310, 25);
-        motherboard.getChildren().add(powerConnectorB_1RAM2.getPanel());
-
-        Panel powerConnectorB_1RAM3 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorB_1RAM3.setRotate(90, 0, 90);
-        powerConnectorB_1RAM3.setPosition(-130, -190, 25);
-        motherboard.getChildren().add(powerConnectorB_1RAM3.getPanel());
-
-        Panel powerConnectorB_1RAM4 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorB_1RAM4.setRotate(90, 0, 90);
-        powerConnectorB_1RAM4.setPosition(-130, -90, 25);
-        motherboard.getChildren().add(powerConnectorB_1RAM4.getPanel());
-
-        Panel powerConnectorA_2RAM = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorA_2RAM.setRotate(0, 0, 90);
-        powerConnectorA_2RAM.setPosition(-130, -200, 40);
-        motherboard.getChildren().add(powerConnectorA_2RAM.getPanel());
-
-        Panel powerConnectorA_2RAM1 = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorA_2RAM1.setRotate(0, 0, 90);
-        powerConnectorA_2RAM1.setPosition(-130, -200, 50);
-        motherboard.getChildren().add(powerConnectorA_2RAM1.getPanel());
-
-        Panel powerConnectorA_2RAM2 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorA_2RAM2.setRotate(90, 0, 90);
-        powerConnectorA_2RAM2.setPosition(-130, -310, 45);
-        motherboard.getChildren().add(powerConnectorA_2RAM2.getPanel());
-
-        Panel powerConnectorA_2RAM3 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorA_2RAM3.setRotate(90, 0, 90);
-        powerConnectorA_2RAM3.setPosition(-130, -190, 45);
-        motherboard.getChildren().add(powerConnectorA_2RAM3.getPanel());
-
-        Panel powerConnectorA_2RAM4 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorA_2RAM4.setRotate(90, 0, 90);
-        powerConnectorA_2RAM4.setPosition(-130, -90, 45);
-        motherboard.getChildren().add(powerConnectorA_2RAM4.getPanel());
-
-        Panel powerConnectorB_2RAM = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorB_2RAM.setRotate(0, 0, 90);
-        powerConnectorB_2RAM.setPosition(-130, -200, 60);
-        motherboard.getChildren().add(powerConnectorB_2RAM.getPanel());
-
-        Panel powerConnectorB_2RAM1 = new Panel(220, 4, 3, Color.GRAY);
-        powerConnectorB_2RAM1.setRotate(0, 0, 90);
-        powerConnectorB_2RAM1.setPosition(-130, -200, 70);
-        motherboard.getChildren().add(powerConnectorB_2RAM1.getPanel());
-
-        Panel powerConnectorB_2RAM2 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorB_2RAM2.setRotate(90, 0, 90);
-        powerConnectorB_2RAM2.setPosition(-130, -310, 65);
-        motherboard.getChildren().add(powerConnectorB_2RAM2.getPanel());
-
-        Panel powerConnectorB_2RAM3 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorB_2RAM3.setRotate(90, 0, 90);
-        powerConnectorB_2RAM3.setPosition(-130, -190, 65);
-        motherboard.getChildren().add(powerConnectorB_2RAM3.getPanel());
-
-        Panel powerConnectorB_2RAM4 = new Panel(10, 4, 3, Color.GRAY);
-        powerConnectorB_2RAM4.setRotate(90, 0, 90);
-        powerConnectorB_2RAM4.setPosition(-130, -90, 65);
-        motherboard.getChildren().add(powerConnectorB_2RAM4.getPanel());
+        initRAM_Connector(motherboard);
+        initRAM();
+        initCPU_Radiator();
 
         motherboard.translateXProperty().set(x);
         motherboard.translateYProperty().set(y);
@@ -301,8 +207,56 @@ public class Motherboard {
 
         group.getChildren().add(motherboard);
 
-        initRAM();
     }
+
+    private void initCPU_Radiator() {
+        CPU_Radiator cpUradiator = new CPU_Radiator(10, -30, -40, 60, 15, 60, 90, 0,0,group, true);
+        cpUradiator.init();
+    }
+
+    private void initRAM_Connector(GroupExtended motherboard) {
+        ConnectorRAM powerConnectorA_1RAM = new ConnectorRAM(-130, -200, 0,220,0,0,90,motherboard);
+        powerConnectorA_1RAM.init();
+        ConnectorRAM powerConnectorA_1RAM1 = new ConnectorRAM(-130, -200, 10,220,0,0,90,motherboard);
+        powerConnectorA_1RAM1.init();
+        ConnectorRAM powerConnectorA_1RAM2 = new ConnectorRAM(-130, -310, 5,10,90,0,90,motherboard);
+        powerConnectorA_1RAM2.init();
+        ConnectorRAM powerConnectorA_1RAM3 = new ConnectorRAM(-130, -190, 5,10,90,0,90,motherboard);
+        powerConnectorA_1RAM3.init();
+        ConnectorRAM powerConnectorA_1RAM4 = new ConnectorRAM(-130, -90, 5,10,90,0,90,motherboard);
+        powerConnectorA_1RAM4.init();
+        ConnectorRAM powerConnectorB_1RAM = new ConnectorRAM(-130, -200, 20,220,0,0,90,motherboard);
+        powerConnectorB_1RAM.init();
+        ConnectorRAM powerConnectorB_1RAM1 = new ConnectorRAM(-130, -200, 30,220,0,0,90,motherboard);
+        powerConnectorB_1RAM1.init();
+        ConnectorRAM powerConnectorB_1RAM2 = new ConnectorRAM(-130, -310, 25,10,90,0,90,motherboard);
+        powerConnectorB_1RAM2.init();
+        ConnectorRAM powerConnectorB_1RAM3 = new ConnectorRAM(-130, -190, 25,10,90,0,90,motherboard);
+        powerConnectorB_1RAM3.init();
+        ConnectorRAM powerConnectorB_1RAM4 = new ConnectorRAM(-130, -90, 25,10,90,0,90,motherboard);
+        powerConnectorB_1RAM4.init();
+        ConnectorRAM powerConnectorA_2RAM = new ConnectorRAM(-130, -200, 40,220,0,0,90,motherboard);
+        powerConnectorA_2RAM.init();
+        ConnectorRAM powerConnectorA_2RAM1 = new ConnectorRAM(-130, -200, 50,220,0,0,90,motherboard);
+        powerConnectorA_2RAM1.init();
+        ConnectorRAM powerConnectorA_2RAM2 = new ConnectorRAM(-130, -310, 45,10, 90, 0, 90, motherboard);
+        powerConnectorA_2RAM2.init();
+        ConnectorRAM powerConnectorA_2RAM3 = new ConnectorRAM(-130, -190, 45,10, 90, 0, 90, motherboard);
+        powerConnectorA_2RAM3.init();
+        ConnectorRAM powerConnectorA_2RAM4 = new ConnectorRAM(-130, -90, 45,10, 90, 0, 90, motherboard);
+        powerConnectorA_2RAM4.init();
+        ConnectorRAM powerConnectorB_2RAM = new ConnectorRAM(-130, -200, 60,220, 0, 0, 90, motherboard);
+        powerConnectorB_2RAM.init();
+        ConnectorRAM powerConnectorB_2RAM1 = new ConnectorRAM(-130, -200, 70,220, 0, 0, 90, motherboard);
+        powerConnectorB_2RAM1.init();
+        ConnectorRAM powerConnectorB_2RAM2 = new ConnectorRAM(-130, -310, 65,10, 90, 0, 90, motherboard);
+        powerConnectorB_2RAM2.init();
+        ConnectorRAM powerConnectorB_2RAM3 = new ConnectorRAM(-130, -190, 65,10, 90, 0, 90, motherboard);
+        powerConnectorB_2RAM3.init();
+        ConnectorRAM powerConnectorB_2RAM4 = new ConnectorRAM(-130, -90, 65,10, 90, 0, 90, motherboard);
+        powerConnectorB_2RAM4.init();
+    }
+
     private void initRAM() {
         RAM ram1 = new RAM(-205,-200,-65, 5, 45,220,0,0,0, group, true);
         RAM ram2 = new RAM(-205,-200,-85, 5, 45,220,0,0,0, group, true);
