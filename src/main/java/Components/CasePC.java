@@ -1,63 +1,151 @@
 package Components;
 
+import Elements.CylinderP;
 import Elements.Panel;
 import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Cylinder;
+import javafx.scene.transform.Rotate;
 
 import java.util.Random;
 
 public class CasePC {
+
+
+    int x, y, z, xAngle, yAngle, zAngle;
     GroupExtended group;
     boolean on;
 
-    public CasePC(GroupExtended group, boolean on) {
+    public CasePC(int x, int y, int z, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) { this.x = x;
+        this.y = y;
+        this.z = z;
+        this.xAngle = xAngle;
+        this.yAngle = yAngle;
+        this.zAngle = zAngle;
         this.group = group;
         this.on = on;
     }
 
     public void init() {
+        GroupExtended casePC = new GroupExtended();
 
-
-        Panel back_left_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
+        CylinderP back_left_cage = new CylinderP(4, 800, Color.WHITESMOKE);
         back_left_cage.setPosition(-150, 0, -400);
-        group.getChildren().add(back_left_cage.getPanel());
+        casePC.getChildren().add(back_left_cage.getCylinder());
 
-        Panel back_right_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
+        CylinderP back_right_cage = new CylinderP(4, 800, Color.WHITESMOKE);
         back_right_cage.setPosition(-150, 0, 400);
-        group.getChildren().add(back_right_cage.getPanel());
+        casePC.getChildren().add(back_right_cage.getCylinder());
 
-        Panel front_left_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
+        CylinderP front_left_cage = new CylinderP(4, 800, Color.WHITESMOKE);
         front_left_cage.setPosition(150, 0, -400);
-        group.getChildren().add(front_left_cage.getPanel());
+        casePC.getChildren().add(front_left_cage.getCylinder());
 
-        Panel front_right_cage = new Panel(5, 800, 5, Color.ROSYBROWN);
+        CylinderP front_right_cage = new CylinderP(4, 800, Color.WHITESMOKE);
         front_right_cage.setPosition(150, 0, 400);
-        group.getChildren().add(front_right_cage.getPanel());
+        casePC.getChildren().add(front_right_cage.getCylinder());
 
-        Panel top_cover = new Panel(300, 1, 800, Color.WHITESMOKE);
+        CylinderP up_1_cage = new CylinderP(4, 800, Color.WHITESMOKE);
+        up_1_cage.setPosition(150, -400, 0);
+        up_1_cage.setRotate(90,0,0);
+        casePC.getChildren().add(up_1_cage.getCylinder());
+        CylinderP up_2_cage = new CylinderP(4, 800, Color.WHITESMOKE);
+        up_2_cage.setPosition(-150, -400, 0);
+        up_2_cage.setRotate(90,0,0);
+        casePC.getChildren().add(up_2_cage.getCylinder());
+        CylinderP up_3_cage = new CylinderP(4, 300, Color.WHITESMOKE);
+        up_3_cage.setPosition(0, -400, -400);
+        up_3_cage.setRotate(90,0,90);
+        casePC.getChildren().add(up_3_cage.getCylinder());
+        CylinderP up_4_cage = new CylinderP(4, 300, Color.WHITESMOKE);
+        up_4_cage.setPosition(0, -400, 400);
+        up_4_cage.setRotate(90,0,90);
+        casePC.getChildren().add(up_4_cage.getCylinder());
+
+        CylinderP down_1_cage = new CylinderP(4, 800, Color.WHITESMOKE);
+        down_1_cage.setPosition(150, 400, 0);
+        down_1_cage.setRotate(90,0,0);
+        casePC.getChildren().add(down_1_cage.getCylinder());
+        CylinderP down_2_cage = new CylinderP(4, 800, Color.WHITESMOKE);
+        down_2_cage.setPosition(-150, 400, 0);
+        down_2_cage.setRotate(90,0,0);
+        casePC.getChildren().add(down_2_cage.getCylinder());
+        CylinderP down_3_cage = new CylinderP(4, 300, Color.WHITESMOKE);
+        down_3_cage.setPosition(0, 400, -400);
+        down_3_cage.setRotate(90,0,90);
+        casePC.getChildren().add(down_3_cage.getCylinder());
+        CylinderP down_4_cage = new CylinderP(4, 300, Color.WHITESMOKE);
+        down_4_cage.setPosition(0, 400, 400);
+        down_4_cage.setRotate(90,0,90);
+        casePC.getChildren().add(down_4_cage.getCylinder());
+
+
+        Panel top_cover = new Panel(300, 4, 800, Color.ROSYBROWN);
         top_cover.setPosition(0, -400, 0);
-        group.getChildren().add(top_cover.getPanel());
+        casePC.getChildren().add(top_cover.getPanel());
 
-
-        Panel bottom_cover = new Panel(300, 1, 800, Color.WHITESMOKE);
+        Panel bottom_cover = new Panel(300, 4, 800, Color.ROSYBROWN);
         bottom_cover.setPosition(0, 400, 0);
-        group.getChildren().add(bottom_cover.getPanel());
+        casePC.getChildren().add(bottom_cover.getPanel());
 
-        Panel back_cover = new Panel(1, 800, 800, Color.WHITESMOKE);
+        Panel back_cover = new Panel(4, 800, 800, Color.ROSYBROWN);
         back_cover.setPosition(-150, 0, 0);
-        group.getChildren().add(back_cover.getPanel());
+        casePC.getChildren().add(back_cover.getPanel());
 
-        Panel front_cover = new Panel(1, 800, 800, Color.WHITESMOKE);
+        Panel front_cover = new Panel(4, 800, 800, Color.ROSYBROWN);
         front_cover.setPosition(150, 0, 0);
-//        group.getChildren().add(front_cover.getPanel());
+//        casePC.getChildren().add(front_cover.getPanel());
+
+        Panel front_up_cover = new Panel(300, 5, 80, Color.ROSYBROWN);
+        front_up_cover.setPosition(0, -360, 395);
+        front_up_cover.setRotate(90,0,0);
+        casePC.getChildren().add(front_up_cover.getPanel());
+        Panel front_down_cover = new Panel(300, 5, 80, Color.ROSYBROWN);
+        front_down_cover.setPosition(0, 360, 395);
+        front_down_cover.setRotate(90,0,0);
+        casePC.getChildren().add(front_down_cover.getPanel());
+
+        Panel front_left_cover = new Panel(700, 5, 50, Color.ROSYBROWN);
+        front_left_cover.setPosition(125, 0, 395);
+        front_left_cover.setRotate(90,90,0);
+        casePC.getChildren().add(front_left_cover.getPanel());
+        Panel front_right_cover = new Panel(700, 5, 50, Color.ROSYBROWN);
+        front_right_cover.setPosition(-125, 0, 395);
+        front_right_cover.setRotate(90,90,0);
+        casePC.getChildren().add(front_right_cover.getPanel());
 
 
+        Panel back_up_cover = new Panel(300, 5, 80, Color.ROSYBROWN);
+        back_up_cover.setPosition(0, -360, -395);
+        back_up_cover.setRotate(90,0,0);
+        casePC.getChildren().add(back_up_cover.getPanel());
+        Panel back_down_cover = new Panel(300, 5, 530, Color.ROSYBROWN);
+        back_down_cover.setPosition(0, 140, -395);
+        back_down_cover.setRotate(90,0,0);
+        casePC.getChildren().add(back_down_cover.getPanel());
 
+        Panel back_left_cover = new Panel(300, 5, 50, Color.ROSYBROWN);
+        back_left_cover.setPosition(125, -200, -395);
+        back_left_cover.setRotate(90,90,0);
+        casePC.getChildren().add(back_left_cover.getPanel());
+        Panel back_right_cover = new Panel(300, 5, 50, Color.ROSYBROWN);
+        back_right_cover.setPosition(-125, -200, -395);
+        back_right_cover.setRotate(90,90,0);
+        casePC.getChildren().add(back_right_cover.getPanel());
 
         initCoolers();
         initPowerSupply();
         initMotherboard();
 
+        casePC.translateXProperty().set(x);
+        casePC.translateYProperty().set(y);
+        casePC.translateZProperty().set(z);
+
+        casePC.getTransforms().add(new Rotate(xAngle, Rotate.X_AXIS));
+        casePC.getTransforms().add(new Rotate(yAngle, Rotate.Y_AXIS));
+        casePC.getTransforms().add(new Rotate(zAngle, Rotate.Z_AXIS));
+
+        group.getChildren().add(casePC);
     }
 
 
@@ -73,7 +161,7 @@ public class CasePC {
         cooler4.init();
     }
     private void initPowerSupply() {
-        PowerSupply powerSupply = new PowerSupply(group, true);
+        PowerSupply powerSupply = new PowerSupply(0, 0, -5, 0, 0, 0, group, true);
         powerSupply.init();
     }
     private void initMotherboard() {

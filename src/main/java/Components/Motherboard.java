@@ -8,15 +8,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 
 public class Motherboard {
-    int x, y, z, speed, xAngle, yAngle, zAngle;
+    int x, y, z, xAngle, yAngle ,zAngle;
     GroupExtended group;
     boolean on;
 
-    public Motherboard(int x, int y, int z, int speed, int xAngle, int yAngle, GroupExtended group, boolean on) {
+    public Motherboard(int x, int y, int z, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.speed = speed;
         this.xAngle = xAngle;
         this.yAngle = yAngle;
         this.zAngle = zAngle;
@@ -210,7 +209,7 @@ public class Motherboard {
     }
 
     private void initCPU_Radiator() {
-        CPU_Radiator cpUradiator = new CPU_Radiator(10, -30, -40, 60, 15, 60, 90, 0,0,group, true);
+        CPU_Radiator cpUradiator = new CPU_Radiator(10, -30, 15, 60, 15, 60, 90, 0,0,group, true);
         cpUradiator.init();
     }
 

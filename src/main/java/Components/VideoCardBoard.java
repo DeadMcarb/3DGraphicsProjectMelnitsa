@@ -49,9 +49,9 @@ public class VideoCardBoard {
         Chip chipset3 = new Chip(100, 110, 7, 30, 30, 0, 0, 0, videoCardBoard);
         chipset3.init();
 
-        Panel left_plane = new Panel(70, 270, 5, Color.rgb(228, 228, 228));
+        Panel left_plane = new Panel(70, 270, 10, Color.rgb(228, 228, 228));
         left_plane.setSpecular(Color.WHITE);
-        left_plane.setPosition(250, 0, 30);
+        left_plane.setPosition(253, 0, 30);
         left_plane.setRotate(0, 90,0);
         videoCardBoard.getChildren().add(left_plane.getPanel());
 
