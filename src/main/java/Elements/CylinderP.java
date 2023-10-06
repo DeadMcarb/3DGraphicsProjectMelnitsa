@@ -7,13 +7,17 @@ import javafx.scene.transform.Rotate;
 
 public class CylinderP {
     private Cylinder cylinder;
+    PhongMaterial material;
     public CylinderP(double radius, double height, Color color){
         cylinder = new Cylinder(radius, height);
-        PhongMaterial material = new PhongMaterial(color);
+        material = new PhongMaterial(color);
         material.setSpecularColor(Color.BLACK);
         cylinder.setMaterial(material);
     }
 
+    public void setSpecular(Color color){
+        material.setSpecularColor(color);
+    }
     public Cylinder getCylinder(){
         return cylinder;
     }

@@ -1,11 +1,9 @@
 package Elements;
 
-import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
 import javafx.scene.transform.Rotate;
-import javafx.scene.transform.Transform;
 
 public class Panel {
     private Box box;

@@ -15,12 +15,14 @@ public class HelloApplication extends Application {
         GroupExtended mainGroup = new GroupExtended();
 
         //вызывать в материнке
-        VideoCard videoCard = new VideoCard(10, 40, -140, 10, 270, 0, 90, mainGroup, true);
-        videoCard.init();
+//        VideoCard videoCard = new VideoCard(10, 40, -140, 10, 270, 0, 90, mainGroup, true);
+//        videoCard.init();
+//
+//        CasePC case_PC = new CasePC(0,0,0,0,0,0,mainGroup, true);
+//        case_PC.init();
 
-        CasePC case_PC = new CasePC(0,0,0,0,0,0,mainGroup, true);
-        case_PC.init();
-
+        Drive ssd = new Drive(0, 0, 0, 0,0 ,0, mainGroup);
+        ssd.init();
 
 
         Camera camera = new PerspectiveCamera(true);

@@ -42,11 +42,11 @@ public class VideoCardBoard {
             position += 12;
         }
 
-        Chip chipset = new Chip(0, 110, 7, 30, 30, 0, 0, 0, videoCardBoard);
+        Chip chipset = new Chip(0, 110, 7, 30, 30, 0, 0, 0, videoCardBoard, Color.BLACK);
         chipset.init();
-        Chip chipset2 = new Chip(50, 110, 7, 30, 30, 0, 0, 0, videoCardBoard);
+        Chip chipset2 = new Chip(50, 110, 7, 30, 30, 0, 0, 0, videoCardBoard, Color.BLACK);
         chipset2.init();
-        Chip chipset3 = new Chip(100, 110, 7, 30, 30, 0, 0, 0, videoCardBoard);
+        Chip chipset3 = new Chip(100, 110, 7, 30, 30, 0, 0, 0, videoCardBoard, Color.BLACK);
         chipset3.init();
 
         Panel left_plane = new Panel(70, 270, 10, Color.rgb(228, 228, 228));

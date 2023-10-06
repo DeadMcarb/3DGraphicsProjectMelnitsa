@@ -6,25 +6,32 @@ import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 
 public class Chip {
-    int x, y, z, xAngle, yAngle, zAngle, width, height;
+    int x, y, z, xAngle, yAngle, zAngle, width, height, depth = 6;
+    Color color;
     GroupExtended group;
 
-    public Chip(int x, int y, int z, int width, int height, int xAngle, int yAngle, int zAngle, GroupExtended group) {
+    public Chip(int x, int y, int z, int width, int height, int xAngle, int yAngle, int zAngle, GroupExtended group, Color color) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.width = width;
         this.height = height;
+        this.color = color;
         this.xAngle = xAngle;
         this.yAngle = yAngle;
         this.zAngle = zAngle;
         this.group = group;
     }
 
+    public void setDepth(int depth){
+        this.depth = depth;
+    }
+
     public void init(){
         GroupExtended chip = new GroupExtended();
 
-        Panel chipset = new Panel(width, height, 6, Color.BLACK);
+        Panel chipset = new Panel(width, height, depth, color);
+        chipset.setSpecular(color);
         chip.getChildren().add(chipset.getPanel());
 
         addContacts(1, chip);
@@ -45,9 +52,9 @@ public class Chip {
         int n = (height) / 4;
         int position = -((height) / 2);
         for (int i = 1; i <= n+1; i++) {
-            Panel p1 = new Panel(2, 4, 2, Color.SILVER);
+            Panel p1 = new Panel(2, 3, 2, Color.SILVER);
             p1.setSpecular(Color.WHITE);
-            p1.setPosition((double) (width * side) /2, position, -3);
+            p1.setPosition((double) (width * side) /2, position, -2 + (depth / 3));
             p1.setRotate(0, 0,90);
             chip.getChildren().add(p1.getPanel());
             position += 4;
