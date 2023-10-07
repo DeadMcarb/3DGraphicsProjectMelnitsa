@@ -24,7 +24,7 @@ public class Drive {
     public void init(){
         GroupExtended drive = new GroupExtended();
 
-        Panel board = new Panel(45, 140, 5, Color.rgb(64, 54, 52));
+        Panel board = new Panel(45, 140, 5, Color.BLACK);
         drive.getChildren().add(board.getPanel());
 
         Panel main_connector = new Panel(30, 15, 5, Color.rgb(64, 54, 52));

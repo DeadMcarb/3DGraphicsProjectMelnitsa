@@ -151,10 +151,10 @@ public class CasePC {
 
 
     private void initCoolers() {
-        Cooler cooler = new Cooler(0,-220,400, 100, 1, 0,0,0, group, true);
-        Cooler cooler2 = new Cooler(0,0,400, 100, 1, 0,0,0, group, true);
-        Cooler cooler3 = new Cooler(0,220,400, 100, 1, 0,0,0, group, true);
-        Cooler cooler4 = new Cooler(0,-220,-400, 100, 1, 0,0,0, group, true);
+        Cooler cooler = new Cooler(0,-220,400, 100, 10, 0,0,0, group, true);
+        Cooler cooler2 = new Cooler(0,0,400, 100, 10, 0,0,0, group, true);
+        Cooler cooler3 = new Cooler(0,220,400, 100, 10, 0,0,0, group, true);
+        Cooler cooler4 = new Cooler(0,-220,-400, 100, 10, 0,0,0, group, true);
         cooler.init();
         cooler2.init();
         cooler3.init();

@@ -2,8 +2,10 @@ package Components;
 
 import Elements.CylinderP;
 import Elements.Panel;
+import RadioComponents.Chip;
 import RadioComponents.ConnectorRAM;
 import com.example.zero.GroupExtended;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 
@@ -31,40 +33,66 @@ public class Motherboard {
         motherboard_panel.setPosition(-135, -60, -90);
         motherboard.getChildren().add(motherboard_panel.getPanel());
 
-        CylinderP capacitor = new CylinderP(6, 15, Color.YELLOW);
-        capacitor.setRotate(0, 0, 90);
-        capacitor.setPosition(-130, 0, 0);
-        motherboard.getChildren().add(capacitor.getCylinder());
 
         CylinderP mounting = new CylinderP(6, 6, Color.WHITE);
         mounting.setRotate(0, 0, 90);
-        mounting.setPosition(-135, -300, 100);
+        mounting.setPosition(-135, -340, 150);
         motherboard.getChildren().add(mounting.getCylinder());
 
         CylinderP mounting1 = new CylinderP(6, 6, Color.WHITE);
         mounting1.setRotate(0, 0, 90);
-        mounting1.setPosition(-135, -300, -275);
+        mounting1.setPosition(-135, -340, -325);
         motherboard.getChildren().add(mounting1.getCylinder());
 
         CylinderP mounting2 = new CylinderP(6, 6, Color.WHITE);
         mounting2.setRotate(0, 0, 90);
-        mounting2.setPosition(-135, -30, 100);
+        mounting2.setPosition(-135, -30, 150);
         motherboard.getChildren().add(mounting2.getCylinder());
 
         CylinderP mounting3 = new CylinderP(6, 6, Color.WHITE);
         mounting3.setRotate(0, 0, 90);
-        mounting3.setPosition(-135, -30, -275);
+        mounting3.setPosition(-135, -30, -325);
         motherboard.getChildren().add(mounting3.getCylinder());
 
         CylinderP mounting4 = new CylinderP(6, 6, Color.WHITE);
         mounting4.setRotate(0, 0, 90);
-        mounting4.setPosition(-135, 180, 100);
+        mounting4.setPosition(-135, 220, 150);
         motherboard.getChildren().add(mounting4.getCylinder());
 
         CylinderP mounting5 = new CylinderP(6, 6, Color.WHITE);
         mounting5.setRotate(0, 0, 90);
-        mounting5.setPosition(-135, 180, -275);
+        mounting5.setPosition(-135, 220, -325);
         motherboard.getChildren().add(mounting5.getCylinder());
+
+        CylinderP mounting6 = new CylinderP(5, 1, Color.BLACK);
+        mounting6.setRotate(0, 0, 90);
+        mounting6.setPosition(-132, -340, 150);
+        motherboard.getChildren().add(mounting6.getCylinder());
+
+        CylinderP mounting7 = new CylinderP(5, 1, Color.BLACK);
+        mounting7.setRotate(0, 0, 90);
+        mounting7.setPosition(-132, -340, -325);
+        motherboard.getChildren().add(mounting7.getCylinder());
+
+        CylinderP mounting8 = new CylinderP(5, 1, Color.BLACK);
+        mounting8.setRotate(0, 0, 90);
+        mounting8.setPosition(-132, -30, 150);
+        motherboard.getChildren().add(mounting8.getCylinder());
+
+        CylinderP mounting9 = new CylinderP(5, 1, Color.BLACK);
+        mounting9.setRotate(0, 0, 90);
+        mounting9.setPosition(-132, -30, -325);
+        motherboard.getChildren().add(mounting9.getCylinder());
+
+        CylinderP mounting10 = new CylinderP(5, 1, Color.BLACK);
+        mounting10.setRotate(0, 0, 90);
+        mounting10.setPosition(-132, 220, 150);
+        motherboard.getChildren().add(mounting10.getCylinder());
+
+        CylinderP mounting11 = new CylinderP(5, 1, Color.BLACK);
+        mounting11.setRotate(0, 0, 90);
+        mounting11.setPosition(-132, 220, -325);
+        motherboard.getChildren().add(mounting11.getCylinder());
 
         Panel powerConnectorUp = new Panel(5, 10, 25, Color.GRAY);
         powerConnectorUp.setRotate(0, 0, 90);
@@ -151,45 +179,255 @@ public class Motherboard {
         powerConnectorSide2.setPosition(-130, -140, 140);
         motherboard.getChildren().add(powerConnectorSide2.getPanel());
 
-        Panel powerConnectorCPUSide = new Panel(3, 10, 30, Color.GRAY);
-        powerConnectorCPUSide.setRotate(0, 0, 90);
-        powerConnectorCPUSide.setPosition(-130, -332, -260);
-        motherboard.getChildren().add(powerConnectorCPUSide.getPanel());
+        Panel powerConnectorCPU = new Panel(3, 10, 30, Color.GRAY);
+        powerConnectorCPU.setRotate(0, 0, 90);
+        powerConnectorCPU.setPosition(-130, -352, -290);
+        motherboard.getChildren().add(powerConnectorCPU.getPanel());
 
-        Panel powerConnectorCPUSide1 = new Panel(1, 10, 30, Color.GRAY);
-        powerConnectorCPUSide1.setRotate(0, 0, 90);
-        powerConnectorCPUSide1.setPosition(-130, -325, -260);
-        motherboard.getChildren().add(powerConnectorCPUSide1.getPanel());
+        Panel powerConnectorCPU1 = new Panel(1, 10, 30, Color.GRAY);
+        powerConnectorCPU1.setRotate(0, 0, 90);
+        powerConnectorCPU1.setPosition(-130, -345, -290);
+        motherboard.getChildren().add(powerConnectorCPU1.getPanel());
 
-        Panel powerConnectorCPUSide2 = new Panel(3, 10, 30, Color.GRAY);
-        powerConnectorCPUSide2.setRotate(0, 0, 90);
-        powerConnectorCPUSide2.setPosition(-130, -320, -260);
-        motherboard.getChildren().add(powerConnectorCPUSide2.getPanel());
+        Panel powerConnectorCPU2 = new Panel(3, 10, 30, Color.GRAY);
+        powerConnectorCPU2.setRotate(0, 0, 90);
+        powerConnectorCPU2.setPosition(-130, -338, -290);
+        motherboard.getChildren().add(powerConnectorCPU2.getPanel());
 
-        Panel powerConnectorPCIE = new Panel(3, 10, 200, Color.GRAY);
-        powerConnectorPCIE.setRotate(0, 0, 90);
-        powerConnectorPCIE.setPosition(-130, -40, -160);
-        motherboard.getChildren().add(powerConnectorPCIE.getPanel());
+        Panel powerConnectorCPU3 = new Panel(3, 10, 30, Color.GRAY);
+        powerConnectorCPU3.setRotate(0, 0, 90);
+        powerConnectorCPU3.setPosition(-130, -352, -250);
+        motherboard.getChildren().add(powerConnectorCPU3.getPanel());
 
-        Panel powerConnectorPCIE1 = new Panel(3, 10, 200, Color.GRAY);
-        powerConnectorPCIE1.setRotate(0, 0, 90);
-        powerConnectorPCIE1.setPosition(-130, -30, -160);
-        motherboard.getChildren().add(powerConnectorPCIE1.getPanel());
+        Panel powerConnectorCPU4 = new Panel(1, 10, 30, Color.GRAY);
+        powerConnectorCPU4.setRotate(0, 0, 90);
+        powerConnectorCPU4.setPosition(-130, -345, -250);
+        motherboard.getChildren().add(powerConnectorCPU4.getPanel());
 
-        Panel powerConnectorPCIE2 = new Panel(3, 10, 13, Color.GRAY);
-        powerConnectorPCIE2.setRotate(90, 0, 90);
-        powerConnectorPCIE2.setPosition(-130, -35, -60);
-        motherboard.getChildren().add(powerConnectorPCIE2.getPanel());
+        Panel powerConnectorCPU5 = new Panel(3, 10, 30, Color.GRAY);
+        powerConnectorCPU5.setRotate(0, 0, 90);
+        powerConnectorCPU5.setPosition(-130, -338, -250);
+        motherboard.getChildren().add(powerConnectorCPU5.getPanel());
 
-        Panel powerConnectorPCIE3 = new Panel(3, 10, 13, Color.GRAY);
-        powerConnectorPCIE3.setRotate(90, 0, 90);
-        powerConnectorPCIE3.setPosition(-130, -35, -215);
-        motherboard.getChildren().add(powerConnectorPCIE3.getPanel());
+        //LnR First 8-pin
+        Panel powerConnectorCPU6 = new Panel(3, 10, 15, Color.GRAY);
+        powerConnectorCPU6.setRotate(90, 0, 90);
+        powerConnectorCPU6.setPosition(-130, -345, -235);
+        motherboard.getChildren().add(powerConnectorCPU6.getPanel());
 
-        Panel powerConnectorPCIE4 = new Panel(3, 10, 13, Color.GRAY);
-        powerConnectorPCIE4.setRotate(90, 0, 90);
-        powerConnectorPCIE4.setPosition(-130, -35, -260);
-        motherboard.getChildren().add(powerConnectorPCIE4.getPanel());
+        Panel powerConnectorCPU7 = new Panel(3, 10, 15, Color.GRAY);
+        powerConnectorCPU7.setRotate(90, 0, 90);
+        powerConnectorCPU7.setPosition(-130, -345, -265);
+        motherboard.getChildren().add(powerConnectorCPU7.getPanel());
+
+        // LnR Second 8-pin
+        Panel powerConnectorCPU8 = new Panel(3, 10, 15, Color.GRAY);
+        powerConnectorCPU8.setRotate(90, 0, 90);
+        powerConnectorCPU8.setPosition(-130, -345, -275);
+        motherboard.getChildren().add(powerConnectorCPU8.getPanel());
+
+        Panel powerConnectorCPU9 = new Panel(3, 10, 15, Color.GRAY);
+        powerConnectorCPU9.setRotate(90, 0, 90);
+        powerConnectorCPU9.setPosition(-130, -345, -305);
+        motherboard.getChildren().add(powerConnectorCPU9.getPanel());
+
+        Panel powerConnectorCPU10 = new Panel(2, 10, 15, Color.GRAY);
+        powerConnectorCPU10.setRotate(90, 0, 90);
+        powerConnectorCPU10.setPosition(-130, -345, -242);
+        motherboard.getChildren().add(powerConnectorCPU10.getPanel());
+
+        Panel powerConnectorCPU11 = new Panel(2, 10, 15, Color.GRAY);
+        powerConnectorCPU11.setRotate(90, 0, 90);
+        powerConnectorCPU11.setPosition(-130, -345, -250);
+        motherboard.getChildren().add(powerConnectorCPU11.getPanel());
+
+        Panel powerConnectorCPU12 = new Panel(2, 10, 15, Color.GRAY);
+        powerConnectorCPU12.setRotate(90, 0, 90);
+        powerConnectorCPU12.setPosition(-130, -345, -257);
+        motherboard.getChildren().add(powerConnectorCPU12.getPanel());
+
+        Panel powerConnectorCPU13 = new Panel(2, 10, 15, Color.GRAY);
+        powerConnectorCPU13.setRotate(90, 0, 90);
+        powerConnectorCPU13.setPosition(-130, -345, -282);
+        motherboard.getChildren().add(powerConnectorCPU13.getPanel());
+
+        Panel powerConnectorCPU14 = new Panel(2, 10, 15, Color.GRAY);
+        powerConnectorCPU14.setRotate(90, 0, 90);
+        powerConnectorCPU14.setPosition(-130, -345, -290);
+        motherboard.getChildren().add(powerConnectorCPU14.getPanel());
+
+        Panel powerConnectorCPU15 = new Panel(2, 10, 15, Color.GRAY);
+        powerConnectorCPU15.setRotate(90, 0, 90);
+        powerConnectorCPU15.setPosition(-130, -345, -297);
+        motherboard.getChildren().add(powerConnectorCPU15.getPanel());
+
+        PCIConnector pci = new PCIConnector(-130, -40, -160, 0, 0, 0, motherboard);
+        pci.init();
+
+        Panel ssdMount = new Panel(3,50,10, Color.GHOSTWHITE);
+        ssdMount.setPosition(-130,-80,-70);
+        motherboard.getChildren().add(ssdMount.getPanel());
+
+        Panel chipset = new Panel(3,100,60, Color.DARKGREY);
+        chipset.setPosition(-130,130,50);
+        motherboard.getChildren().add(chipset.getPanel());
+
+        Panel chipset1 = new Panel(10,90,50, Color.PURPLE);
+        chipset1.setPosition(-130,130,50);
+        chipset1.setSpecular(Color.PURPLE);
+        motherboard.getChildren().add(chipset1.getPanel());
+
+        CylinderP chipsetMounting1 = new CylinderP(4, 11, Color.WHITE);
+        chipsetMounting1.setRotate(0, 0, 90);
+        chipsetMounting1.setPosition(-130,85,50);
+        motherboard.getChildren().add(chipsetMounting1.getCylinder());
+
+        CylinderP chipsetMounting2 = new CylinderP(4, 11, Color.WHITE);
+        chipsetMounting2.setRotate(0, 0, 90);
+        chipsetMounting2.setPosition(-130,175,50);
+        motherboard.getChildren().add(chipsetMounting2.getCylinder());
+
+        CylinderP battery = new CylinderP(20, 8, Color.BLACK);
+        battery.setRotate(0, 0, 90);
+        battery.setPosition(-130,175,-150);
+        motherboard.getChildren().add(battery.getCylinder());
+
+        CylinderP battery1 = new CylinderP(18, 8, Color.WHITE);
+        battery1.setRotate(0, 0, 90);
+        battery1.setPosition(-128,175,-150);
+        motherboard.getChildren().add(battery1.getCylinder());
+
+//        Panel chip1 = new Panel(3, 8, 15, Color.rgb(40, 40, 40));
+//        chip1.setPosition(-128,175,-100);
+//        chip1.setRotate(0,0,0);
+//        motherboard.getChildren().add(chip1.getPanel());
+
+
+        Panel motherboard_radiator = new Panel(100, 270, 25, Color.BLACK);
+        motherboard_radiator.setSpecular(Color.SILVER);
+        motherboard_radiator.setRotate(0, 90, 0);
+        motherboard_radiator.setPosition(-120, -180, -285);
+        motherboard.getChildren().add(motherboard_radiator.getPanel());
+
+        Panel motherboard_radiator_2 = new Panel(100, 20, 25, Color.BLACK);
+        motherboard_radiator_2.setSpecular(Color.SILVER);
+        motherboard_radiator_2.setRotate(0, 90, 90);
+        motherboard_radiator_2.setPosition(-120, -95, -225);
+//        motherboard.getChildren().add(motherboard_radiator_2.getPanel());
+
+
+        Panel fin_1 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_1.setRotate(0, 90, -25);
+        fin_1.setPosition(-110, -170, -285);
+        motherboard.getChildren().add(fin_1.getPanel());
+
+        Panel fin_2 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_2.setRotate(0, 90, -25);
+        fin_2.setPosition(-110, -180, -285);
+        motherboard.getChildren().add(fin_2.getPanel());
+
+        Panel fin_3 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_3.setRotate(0, 90, -25);
+        fin_3.setPosition(-110, -190, -285);
+        motherboard.getChildren().add(fin_3.getPanel());
+
+        Panel fin_4 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_4.setRotate(0, 90, -25);
+        fin_4.setPosition(-110, -200, -285);
+        motherboard.getChildren().add(fin_4.getPanel());
+
+        Panel fin_5 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_5.setRotate(0, 90, -25);
+        fin_5.setPosition(-110, -210, -285);
+        motherboard.getChildren().add(fin_5.getPanel());
+
+        Panel fin_6 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_6.setRotate(0, 90, -25);
+        fin_6.setPosition(-110, -220, -285);
+        motherboard.getChildren().add(fin_6.getPanel());
+
+        Panel fin_7 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_7.setRotate(0, 90, -25);
+        fin_7.setPosition(-110, -230, -285);
+        motherboard.getChildren().add(fin_7.getPanel());
+
+        Panel fin_8 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_8.setRotate(0, 90, -25);
+        fin_8.setPosition(-110, -240, -285);
+        motherboard.getChildren().add(fin_8.getPanel());
+
+        Panel fin_9 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_9.setRotate(0, 90, -25);
+        fin_9.setPosition(-110, -250, -285);
+        motherboard.getChildren().add(fin_9.getPanel());
+
+        Panel fin_10 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_10.setRotate(0, 90, -25);
+        fin_10.setPosition(-110, -260, -285);
+        motherboard.getChildren().add(fin_10.getPanel());
+
+        Panel fin_11 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_11.setRotate(0, 90, -25);
+        fin_11.setPosition(-110, -270, -285);
+        motherboard.getChildren().add(fin_11.getPanel());
+
+        Panel fin_12 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_12.setRotate(0, 90, -25);
+        fin_12.setPosition(-110, -280, -285);
+        motherboard.getChildren().add(fin_12.getPanel());
+
+        Panel fin_13 = new Panel(108, 3, 10, Color.SADDLEBROWN);
+        fin_13.setRotate(0, 90, -25);
+        fin_13.setPosition(-110, -290, -285);
+        motherboard.getChildren().add(fin_13.getPanel());
+
+        Capacitor cap_1 = new Capacitor(-127,-290,-220, 0, 0, 0, motherboard);
+        cap_1.init();
+
+        Capacitor cap_2 = new Capacitor(-127,-268,-220, 0, 0, 0, motherboard);
+        cap_2.init();
+
+        Capacitor cap_3 = new Capacitor(-127,-246,-220, 0, 0, 0, motherboard);
+        cap_3.init();
+
+        Capacitor cap_4 = new Capacitor(-127,-224,-220, 0, 0, 0, motherboard);
+        cap_4.init();
+
+        Capacitor cap_5 = new Capacitor(-127,-202,-220, 0, 0, 0, motherboard);
+        cap_5.init();
+
+        Capacitor cap_6 = new Capacitor(-127,-180,-220, 0, 0, 0, motherboard);
+        cap_6.init();
+
+        Capacitor cap_7 = new Capacitor(-127,-158,-220, 0, 0, 0, motherboard);
+        cap_7.init();
+
+        Capacitor cap_8 = new Capacitor(-127,-116,-220, 0, 0, 0, motherboard);
+        cap_8.init();
+
+        Capacitor cap_9 = new Capacitor(-127,-116,-198, 0, 0, 0, motherboard);
+        cap_9.init();
+
+        Capacitor cap_10 = new Capacitor(-127,-116,-176, 0, 0, 0, motherboard);
+        cap_10.init();
+
+        Capacitor cap_11 = new Capacitor(-127,-116,-154, 0, 0, 0, motherboard);
+        cap_11.init();
+
+        Capacitor cap_12 = new Capacitor(-127,-116,-132, 0, 0, 0, motherboard);
+        cap_12.init();
+
+        Chip chip_1 = new Chip(-133, -190, 95, 15, 25, 0, 90, 0, motherboard, Color.BLACK);
+        chip_1.init();
+
+        Chip chip_2 = new Chip(-133, -150, 95, 15, 25, 0, 90, 0, motherboard, Color.BLACK);
+        chip_2.init();
+
+        Capacitor cap_13 = new Capacitor(-127,-120,95, 0, 0, 0, motherboard);
+        cap_13.init();
+
+        Capacitor cap_14 = new Capacitor(-127,-98,95, 0, 0, 0, motherboard);
+        cap_14.init();
 
 
         initRAM_Connector(motherboard);
