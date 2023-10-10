@@ -5,7 +5,6 @@ import Elements.Panel;
 import RadioComponents.Chip;
 import RadioComponents.ConnectorRAM;
 import com.example.zero.GroupExtended;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 
@@ -433,6 +432,8 @@ public class Motherboard {
         initRAM_Connector(motherboard);
         initRAM();
         initCPU_Radiator();
+        initSSD();
+        initGPU();
 
         motherboard.translateXProperty().set(x);
         motherboard.translateYProperty().set(y);
@@ -444,6 +445,16 @@ public class Motherboard {
 
         group.getChildren().add(motherboard);
 
+    }
+
+    private void initGPU() {
+        GPU videoCard = new GPU(10, 40, -140, 10, 270, 0, 90, group, true);
+        videoCard.init();
+    }
+
+    private void initSSD() {
+        Drive ssd = new Drive(-130,-80,-187, 90,90 ,0, group);
+        ssd.init();
     }
 
     private void initCPU_Radiator() {

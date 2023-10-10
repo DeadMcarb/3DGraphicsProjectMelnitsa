@@ -6,14 +6,14 @@ import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 
-public class VideoCard {
+public class GPU {
 
     int x, y, z, speed, xAngle, yAngle, zAngle;
     GroupExtended group;
     boolean on;
 
 
-    public VideoCard(int x, int y, int z, int speed, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) {
+    public GPU(int x, int y, int z, int speed, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) {
         this.x = x;
         this.y = y;
         this.z = z;
