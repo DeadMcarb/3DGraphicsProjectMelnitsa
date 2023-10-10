@@ -448,17 +448,17 @@ public class Motherboard {
     }
 
     private void initGPU() {
-        GPU videoCard = new GPU(10, 40, -140, 10, 270, 0, 90, group, true);
+        GPU videoCard = new GPU(x+10, y+40, z+(-100), 10, xAngle+270, yAngle, zAngle+90, group, true);
         videoCard.init();
     }
 
     private void initSSD() {
-        Drive ssd = new Drive(-130,-80,-187, 90,90 ,0, group);
+        Drive ssd = new Drive(x+(-125),y+(-80),z+(-150), xAngle+90,yAngle+90 ,zAngle, group);
         ssd.init();
     }
 
     private void initCPU_Radiator() {
-        CPU_Radiator cpUradiator = new CPU_Radiator(10, -30, 15, 60, 15, 60, 90, 0,0,group, true);
+        CPU_Radiator cpUradiator = new CPU_Radiator(x+10, y+(-30), z+15, 60, 15, 60, xAngle+90, yAngle,zAngle,group, true);
         cpUradiator.init();
     }
 
@@ -506,10 +506,10 @@ public class Motherboard {
     }
 
     private void initRAM() {
-        RAM ram1 = new RAM(-205,-200,-65, 5, 45,220,0,0,0, group, true);
-        RAM ram2 = new RAM(-205,-200,-85, 5, 45,220,0,0,0, group, true);
-        RAM ram3 = new RAM(-205,-200,-105, 5, 45,220,0,0,0, group, true);
-        RAM ram4 = new RAM(-205,-200,-125, 5, 45,220,0,0,0, group, true);
+        RAM ram1 = new RAM(x+(-205),y+(-200),z+(-25), 5, 45,220,xAngle,yAngle,zAngle, group, true);
+        RAM ram2 = new RAM(x+(-205),y+(-200),z+(-45), 5, 45,220,xAngle,yAngle,zAngle, group, true);
+        RAM ram3 = new RAM(x+(-205),y+(-200),z+(-65), 5, 45,220,xAngle,yAngle,zAngle, group, true);
+        RAM ram4 = new RAM(x+(-205),y+(-200),z+(-85), 5, 45,220,xAngle,yAngle,zAngle, group, true);
         ram1.init();
         ram2.init();
         ram3.init();

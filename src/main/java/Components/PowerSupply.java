@@ -55,7 +55,7 @@ public class PowerSupply {
     }
 
     private void initCoolers() {
-        Cooler cooler = new Cooler(0, 370, -290, 80, 1, 90,0,0, group, true);
+        Cooler cooler = new Cooler(x, 370+y, -290+z, 80, 1, 90,0,0, group, true);
         cooler.init();
     }
 }

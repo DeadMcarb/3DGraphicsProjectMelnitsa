@@ -16,12 +16,9 @@ public class CasePC {
     GroupExtended group;
     boolean on;
 
-    public CasePC(int x, int y, int z, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) { this.x = x;
+    public CasePC(int x, int y, int z, GroupExtended group, boolean on) { this.x = x;
         this.y = y;
         this.z = z;
-        this.xAngle = xAngle;
-        this.yAngle = yAngle;
-        this.zAngle = zAngle;
         this.group = group;
         this.on = on;
     }
@@ -151,21 +148,21 @@ public class CasePC {
 
 
     private void initCoolers() {
-        Cooler cooler = new Cooler(0,-220,400, 100, 10, 0,0,0, group, true);
-        Cooler cooler2 = new Cooler(0,0,400, 100, 10, 0,0,0, group, true);
-        Cooler cooler3 = new Cooler(0,220,400, 100, 10, 0,0,0, group, true);
-        Cooler cooler4 = new Cooler(0,-220,-400, 100, 10, 0,0,0, group, true);
+        Cooler cooler = new Cooler(x,y+(-220),z+400, 100, 10, xAngle, yAngle, zAngle, group, true);
+        Cooler cooler2 = new Cooler(x,y,z+400, 100, 10, xAngle, yAngle, zAngle, group, true);
+        Cooler cooler3 = new Cooler(x,y+220,z+400, 100, 10, xAngle, yAngle, zAngle, group, true);
+        Cooler cooler4 = new Cooler(x,y+(-220),z+(-400), 100, 10, xAngle, yAngle, zAngle, group, true);
         cooler.init();
         cooler2.init();
         cooler3.init();
         cooler4.init();
     }
     private void initPowerSupply() {
-        PowerSupply powerSupply = new PowerSupply(0, 0, -5, 0, 0, 0, group, true);
+        PowerSupply powerSupply = new PowerSupply(x, y, z+(-5), xAngle, yAngle, zAngle, group, true);
         powerSupply.init();
     }
     private void initMotherboard() {
-        Motherboard motherboard = new Motherboard(0, 0, -40, 0, 0, 0, group, true);
+        Motherboard motherboard = new Motherboard(x, y, z+(-40), xAngle, yAngle, zAngle, group, true);
         motherboard.init();
     }
 

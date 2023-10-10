@@ -87,9 +87,9 @@ public class CPU_Radiator {
     }
 
     private void initCoolers() {
-        Cooler cooler = new Cooler(15, -230, -110+z, 80, 10, 0,0,0, group, true);
+        Cooler cooler = new Cooler(x+15, -200+y, -110+z, 80, 10, 0,0,0, group, true);
         cooler.init();
-        Cooler cooler2 = new Cooler(15, -230, -250+z, 80, 10, 0,0,0, group, true);
+        Cooler cooler2 = new Cooler(x+15, -200+y, -250+z, 80, 10, 0,0,0, group, true);
         cooler2.init();
     }
 }

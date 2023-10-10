@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         GroupExtended mainGroup = new GroupExtended();
 
-        CasePC case_PC = new CasePC(0,0,0,0,0,0,mainGroup, true);
+        CasePC case_PC = new CasePC(0,0,0,mainGroup, true);
         case_PC.init();
 
         Camera camera = new PerspectiveCamera(true);
