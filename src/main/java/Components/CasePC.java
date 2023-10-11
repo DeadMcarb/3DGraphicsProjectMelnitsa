@@ -4,10 +4,7 @@ import Elements.CylinderP;
 import Elements.Panel;
 import com.example.zero.GroupExtended;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
-
-import java.util.Random;
 
 public class CasePC {
 
