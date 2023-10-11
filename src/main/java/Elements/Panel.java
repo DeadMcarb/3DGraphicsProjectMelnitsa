@@ -3,16 +3,18 @@ package Elements;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
+import javafx.scene.shape.DrawMode;
 import javafx.scene.transform.Rotate;
 
 public class Panel {
     private Box box;
     PhongMaterial material;
-    public Panel(double width, double height, double depth, Color color){
+    public Panel(double width, double height, double depth, Color color, Boolean line){
         box = new Box(width, height, depth);
         material = new PhongMaterial(color);
         material.setSpecularColor(Color.BLACK);
         box.setMaterial(material);
+        if (line) box.setDrawMode(DrawMode.LINE);
     }
 
     public void setSpecular(Color color){

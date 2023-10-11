@@ -3,16 +3,18 @@ package Elements;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Cylinder;
+import javafx.scene.shape.DrawMode;
 import javafx.scene.transform.Rotate;
 
 public class CylinderP {
     private Cylinder cylinder;
     PhongMaterial material;
-    public CylinderP(double radius, double height, Color color){
+    public CylinderP(double radius, double height, Color color, Boolean line){
         cylinder = new Cylinder(radius, height);
         material = new PhongMaterial(color);
         material.setSpecularColor(Color.BLACK);
         cylinder.setMaterial(material);
+        if (line) cylinder.setDrawMode(DrawMode.LINE);
     }
 
     public void setSpecular(Color color){

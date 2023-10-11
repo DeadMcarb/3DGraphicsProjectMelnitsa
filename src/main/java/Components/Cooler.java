@@ -1,5 +1,7 @@
 package Components;
 
+import Elements.CylinderP;
+import Elements.Panel;
 import com.example.zero.GroupExtended;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
@@ -8,6 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
+import javafx.scene.shape.DrawMode;
 import javafx.scene.transform.Rotate;
 
 public class Cooler {
@@ -47,20 +50,19 @@ public class Cooler {
        drawCircle(radius, 35, cooler);
        cooler.getChildren().add(propeller);
 
-       if(on) {
-           prepareAnimation(propeller, speed);
-       }
+        prepareAnimation(propeller, speed);
 
-       cooler.translateXProperty().set(x);
-       cooler.translateYProperty().set(y);
-       cooler.translateZProperty().set(z);
 
-       cooler.getTransforms().add(new Rotate(xAngle, Rotate.X_AXIS));
-       cooler.getTransforms().add(new Rotate(yAngle, Rotate.Y_AXIS));
-       cooler.getTransforms().add(new Rotate(zAngle, Rotate.Z_AXIS));
+        cooler.translateXProperty().set(x);
+        cooler.translateYProperty().set(y);
+        cooler.translateZProperty().set(z);
 
-       group.getChildren().add(cooler);
-   }
+        cooler.getTransforms().add(new Rotate(xAngle, Rotate.X_AXIS));
+        cooler.getTransforms().add(new Rotate(yAngle, Rotate.Y_AXIS));
+        cooler.getTransforms().add(new Rotate(zAngle, Rotate.Z_AXIS));
+
+        group.getChildren().add(cooler);
+    }
 
     private static void drawCircle(int radius, int height, GroupExtended group) {
         int n = (int) Math.ceil(10 * radius);
@@ -70,19 +72,16 @@ public class Cooler {
             double angle = i * angleStep;
             int x = (int) (radius * Math.cos(Math.toRadians(angle)));
             int y = (int) (radius * Math.sin(Math.toRadians(angle)));
-            Box box;
-            if(!((angle == 0)||(angle==90)||(angle==180)||(angle==270))) {
-                box = new Box(15, 20, height);
+            Panel box;
+            if (!((angle == 0) || (angle == 90) || (angle == 180) || (angle == 270))) {
+                box = new Panel(15, 20, height, Color.BEIGE, on);
             } else {
-                box = new Box(16, radius * 2 + 16, height);
+                box = new Panel(16, radius * 2 + 16, height, Color.BEIGE, on);
             }
-            PhongMaterial material = new PhongMaterial(Color.BEIGE);
-            material.setSpecularColor(Color.BLACK);
-            box.setMaterial(material);
-            box.translateXProperty().set(x);
-            box.translateYProperty().set(y);
-            box.setRotate(angle);
-            group.getChildren().add(box);
+            box.setPosition(x, y, 0);
+            box.setSpecular(Color.BLACK);
+            box.setRotate(0, 0, angle);
+            group.getChildren().add(box.getPanel());
         }
     }
 
@@ -94,19 +93,16 @@ public class Cooler {
         int n = length / Math.abs(width);
         double angle = -35;
         double angleStep = (double) 60 / n;
-        int x = ox*10;
+        int x = ox * 10;
         double heightStep = (height + 5) / n;
 
         for (int i = 0; i < n; i++) {
-            Box box = new Box(height, width, 1);
-            x+=ox;
-            box.translateYProperty().set(x);
+            Panel box = new Panel(height, width, 1, Color.SADDLEBROWN, on);
+            x += ox;
+            box.setPosition(0, x, 0);
             angle += angleStep;
-            box.getTransforms().add(new Rotate(-angle, Rotate.Y_AXIS));
-            PhongMaterial material = new PhongMaterial(Color.SADDLEBROWN);
-            material.setSpecularColor(Color.BLACK);
-            box.setMaterial(material);
-            blade.getChildren().add(box);
+            box.setRotate(0, -angle, 0);
+            blade.getChildren().add(box.getPanel());
             height += heightStep;
         }
         if (rAngle > 0) blade.getTransforms().add(new Rotate(rAngle + 360, Rotate.Z_AXIS));
@@ -117,7 +113,7 @@ public class Cooler {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                obj.getTransforms().add(new Rotate(obj.getRotate()+speedCooler, Rotate.Z_AXIS));
+                obj.getTransforms().add(new Rotate(obj.getRotate() + speedCooler, Rotate.Z_AXIS));
             }
         };
         timer.start();

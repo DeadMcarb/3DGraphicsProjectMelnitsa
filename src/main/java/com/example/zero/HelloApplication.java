@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 
         Camera camera = new PerspectiveCamera(true);
         Scene scene = new Scene(mainGroup, 1440, 800, true);
-        scene.setFill(Color.LIGHTPINK);
+        scene.setFill(Color.ROSYBROWN);
         scene.setCamera(camera);
         camera.translateXProperty().set(0);
         camera.translateYProperty().set(0);
