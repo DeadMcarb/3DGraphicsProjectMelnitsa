@@ -8,6 +8,7 @@ import javafx.scene.transform.Rotate;
 public class PCIConnector {
     int x, y, z, xAngle, yAngle, zAngle;
     GroupExtended group;
+    boolean on;
 
     public PCIConnector(int x, int y, int z, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) {
         this.x = x;
@@ -17,25 +18,16 @@ public class PCIConnector {
         this.yAngle = yAngle;
         this.zAngle = zAngle;
         this.group = group;
+        this.on = on;
     }
     
     public void init(){
         GroupExtended pci = new GroupExtended();
-        
-//        Panel powerConnectorPCIE = new Panel(3, 10, 200, Color.GRAY);
-//        powerConnectorPCIE.setRotate(0, 0, 90);
-//        powerConnectorPCIE.setPosition(-130, -40, -160);
-//        pci.getChildren().add(powerConnectorPCIE.getPanel());
 
         Panel powerConnectorPCIE = new Panel(3, 10, 200, Color.GRAY, true);
         powerConnectorPCIE.setRotate(0, 0, 90);
         powerConnectorPCIE.setPosition(0, 0, 0);
         pci.getChildren().add(powerConnectorPCIE.getPanel());
-
-//        Panel powerConnectorPCIE1 = new Panel(3, 10, 200, Color.GRAY);
-//        powerConnectorPCIE1.setRotate(0, 0, 90);
-//        powerConnectorPCIE1.setPosition(-130, -30, -160);
-//        pci.getChildren().add(powerConnectorPCIE1.getPanel());
 
         Panel powerConnectorPCIE1 = new Panel(3, 10, 200, Color.GRAY, on);
         powerConnectorPCIE1.setRotate(0, 0, 90);

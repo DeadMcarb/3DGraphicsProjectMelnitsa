@@ -25,19 +25,19 @@ public class PowerSupply {
 
         GroupExtended powerSupply = new GroupExtended();
 
-        Panel back_left_cage = new Panel(8, 120, 200, Color.DARKGRAY);
+        Panel back_left_cage = new Panel(8, 120, 200, Color.DARKGRAY, on);
         back_left_cage.setPosition(-120, 330, -290);
         powerSupply.getChildren().add(back_left_cage.getPanel());
 
-        Panel back_right_cage = new Panel(240, 120, 8, Color.DARKGRAY);
+        Panel back_right_cage = new Panel(240, 120, 8, Color.DARKGRAY, on);
         back_right_cage.setPosition(0, 330, -190);
         powerSupply.getChildren().add(back_right_cage.getPanel());
 
-        Panel front_left_cage = new Panel(240, 120, 8, Color.DARKGRAY);
+        Panel front_left_cage = new Panel(240, 120, 8, Color.DARKGRAY, on);
         front_left_cage.setPosition(0, 330, -390);
         powerSupply.getChildren().add(front_left_cage.getPanel());
 
-        Panel front_right_cage = new Panel(8, 120, 200, Color.DARKGRAY);
+        Panel front_right_cage = new Panel(8, 120, 200, Color.DARKGRAY, on);
         front_right_cage.setPosition(120, 330, -290);
         powerSupply.getChildren().add(front_right_cage.getPanel());
 

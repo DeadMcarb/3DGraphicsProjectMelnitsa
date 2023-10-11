@@ -27,32 +27,32 @@ public class RAM {
     public void init() {
         GroupExtended ram = new GroupExtended();
 
-        Panel raMpay = new Panel(height,depth,width,Color.BEIGE);
+        Panel raMpay = new Panel(height,depth,width,Color.BEIGE, on);
         raMpay.setPosition(100,0,90);
         ram.getChildren().add(raMpay.getPanel());
 
-        Panel chip1 = new Panel(3, height, 15, Color.rgb(40, 40, 40));
+        Panel chip1 = new Panel(3, height, 15, Color.rgb(40, 40, 40), on);
         chip1.setPosition(100, -10, 90);
         chip1.setRotate(90,0,90);
         ram.getChildren().add(chip1.getPanel());
 
-        Panel chip2 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40));
+        Panel chip2 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40), on);
         chip2.setPosition(100, 10, 90);
         ram.getChildren().add(chip2.getPanel());
 
-        Panel chip3 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40));
+        Panel chip3 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40), on);
         chip3.setPosition(100, 30, 90);
         ram.getChildren().add(chip3.getPanel());
 
-        Panel chip4 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40));
+        Panel chip4 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40), on);
         chip4.setPosition(100, 50, 90);
         ram.getChildren().add(chip4.getPanel());
 
-        Panel chip5 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40));
+        Panel chip5 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40), on);
         chip5.setPosition(100, -30, 90);
         ram.getChildren().add(chip5.getPanel());
 
-        Panel chip6 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40));
+        Panel chip6 = new Panel(15, 15, width+2, Color.rgb(40, 40, 40), on);
         chip6.setPosition(100, -50, 90);
         ram.getChildren().add(chip6.getPanel());
 

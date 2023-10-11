@@ -260,7 +260,7 @@ public class Motherboard {
         powerConnectorCPU15.setPosition(-130, -345, -297);
         motherboard.getChildren().add(powerConnectorCPU15.getPanel());
 
-        PCIConnector pci = new PCIConnector(-130, -40, -160, 0, 0, 0, motherboard);
+        PCIConnector pci = new PCIConnector(-130, -40, -160, 0, 0, 0, motherboard, on);
         pci.init();
 
         Panel ssdMount = new Panel(3,50,10, Color.GHOSTWHITE);
@@ -416,10 +416,10 @@ public class Motherboard {
         Capacitor cap_12 = new Capacitor(-127,-116,-132, 0, 0, 0, motherboard);
         cap_12.init();
 
-        Chip chip_1 = new Chip(-133, -190, 95, 15, 25, 0, 90, 0, motherboard, Color.BLACK);
+        Chip chip_1 = new Chip(-133, -190, 95, 15, 25, 0, 90, 0, motherboard, Color.BLACK, on);
         chip_1.init();
 
-        Chip chip_2 = new Chip(-133, -150, 95, 15, 25, 0, 90, 0, motherboard, Color.BLACK);
+        Chip chip_2 = new Chip(-133, -150, 95, 15, 25, 0, 90, 0, motherboard, Color.BLACK, on);
         chip_2.init();
 
         Capacitor cap_13 = new Capacitor(-127,-120,95, 0, 0, 0, motherboard);
@@ -453,7 +453,7 @@ public class Motherboard {
     }
 
     private void initSSD() {
-        Drive ssd = new Drive(x+(-125),y+(-80),z+(-150), xAngle+90,yAngle+90 ,zAngle, group);
+        Drive ssd = new Drive(x+(-125),y+(-80),z+(-150), xAngle+90,yAngle+90 ,zAngle, group, on);
         ssd.init();
     }
 
@@ -463,45 +463,45 @@ public class Motherboard {
     }
 
     private void initRAM_Connector(GroupExtended motherboard) {
-        ConnectorRAM powerConnectorA_1RAM = new ConnectorRAM(-130, -200, 0,220,0,0,90,motherboard);
+        ConnectorRAM powerConnectorA_1RAM = new ConnectorRAM(-130, -200, 0,220,0,0,90, motherboard, on);
         powerConnectorA_1RAM.init();
-        ConnectorRAM powerConnectorA_1RAM1 = new ConnectorRAM(-130, -200, 10,220,0,0,90,motherboard);
+        ConnectorRAM powerConnectorA_1RAM1 = new ConnectorRAM(-130, -200, 10,220,0,0,90, motherboard, on);
         powerConnectorA_1RAM1.init();
-        ConnectorRAM powerConnectorA_1RAM2 = new ConnectorRAM(-130, -310, 5,10,90,0,90,motherboard);
+        ConnectorRAM powerConnectorA_1RAM2 = new ConnectorRAM(-130, -310, 5,10,90,0,90, motherboard, on);
         powerConnectorA_1RAM2.init();
-        ConnectorRAM powerConnectorA_1RAM3 = new ConnectorRAM(-130, -190, 5,10,90,0,90,motherboard);
+        ConnectorRAM powerConnectorA_1RAM3 = new ConnectorRAM(-130, -190, 5,10,90,0,90, motherboard, on);
         powerConnectorA_1RAM3.init();
-        ConnectorRAM powerConnectorA_1RAM4 = new ConnectorRAM(-130, -90, 5,10,90,0,90,motherboard);
+        ConnectorRAM powerConnectorA_1RAM4 = new ConnectorRAM(-130, -90, 5,10,90,0,90, motherboard, on);
         powerConnectorA_1RAM4.init();
-        ConnectorRAM powerConnectorB_1RAM = new ConnectorRAM(-130, -200, 20,220,0,0,90,motherboard);
+        ConnectorRAM powerConnectorB_1RAM = new ConnectorRAM(-130, -200, 20,220,0,0,90, motherboard, on);
         powerConnectorB_1RAM.init();
-        ConnectorRAM powerConnectorB_1RAM1 = new ConnectorRAM(-130, -200, 30,220,0,0,90,motherboard);
+        ConnectorRAM powerConnectorB_1RAM1 = new ConnectorRAM(-130, -200, 30,220,0,0,90, motherboard, on);
         powerConnectorB_1RAM1.init();
-        ConnectorRAM powerConnectorB_1RAM2 = new ConnectorRAM(-130, -310, 25,10,90,0,90,motherboard);
+        ConnectorRAM powerConnectorB_1RAM2 = new ConnectorRAM(-130, -310, 25,10,90,0,90, motherboard, on);
         powerConnectorB_1RAM2.init();
-        ConnectorRAM powerConnectorB_1RAM3 = new ConnectorRAM(-130, -190, 25,10,90,0,90,motherboard);
+        ConnectorRAM powerConnectorB_1RAM3 = new ConnectorRAM(-130, -190, 25,10,90,0,90, motherboard, on);
         powerConnectorB_1RAM3.init();
-        ConnectorRAM powerConnectorB_1RAM4 = new ConnectorRAM(-130, -90, 25,10,90,0,90,motherboard);
+        ConnectorRAM powerConnectorB_1RAM4 = new ConnectorRAM(-130, -90, 25,10,90,0,90, motherboard, on);
         powerConnectorB_1RAM4.init();
-        ConnectorRAM powerConnectorA_2RAM = new ConnectorRAM(-130, -200, 40,220,0,0,90,motherboard);
+        ConnectorRAM powerConnectorA_2RAM = new ConnectorRAM(-130, -200, 40,220,0,0,90, motherboard, on);
         powerConnectorA_2RAM.init();
-        ConnectorRAM powerConnectorA_2RAM1 = new ConnectorRAM(-130, -200, 50,220,0,0,90,motherboard);
+        ConnectorRAM powerConnectorA_2RAM1 = new ConnectorRAM(-130, -200, 50,220,0,0,90, motherboard, on);
         powerConnectorA_2RAM1.init();
-        ConnectorRAM powerConnectorA_2RAM2 = new ConnectorRAM(-130, -310, 45,10, 90, 0, 90, motherboard);
+        ConnectorRAM powerConnectorA_2RAM2 = new ConnectorRAM(-130, -310, 45,10, 90, 0, 90, motherboard, on);
         powerConnectorA_2RAM2.init();
-        ConnectorRAM powerConnectorA_2RAM3 = new ConnectorRAM(-130, -190, 45,10, 90, 0, 90, motherboard);
+        ConnectorRAM powerConnectorA_2RAM3 = new ConnectorRAM(-130, -190, 45,10, 90, 0, 90, motherboard, on);
         powerConnectorA_2RAM3.init();
-        ConnectorRAM powerConnectorA_2RAM4 = new ConnectorRAM(-130, -90, 45,10, 90, 0, 90, motherboard);
+        ConnectorRAM powerConnectorA_2RAM4 = new ConnectorRAM(-130, -90, 45,10, 90, 0, 90, motherboard, on);
         powerConnectorA_2RAM4.init();
-        ConnectorRAM powerConnectorB_2RAM = new ConnectorRAM(-130, -200, 60,220, 0, 0, 90, motherboard);
+        ConnectorRAM powerConnectorB_2RAM = new ConnectorRAM(-130, -200, 60,220, 0, 0, 90, motherboard, on);
         powerConnectorB_2RAM.init();
-        ConnectorRAM powerConnectorB_2RAM1 = new ConnectorRAM(-130, -200, 70,220, 0, 0, 90, motherboard);
+        ConnectorRAM powerConnectorB_2RAM1 = new ConnectorRAM(-130, -200, 70,220, 0, 0, 90, motherboard, on);
         powerConnectorB_2RAM1.init();
-        ConnectorRAM powerConnectorB_2RAM2 = new ConnectorRAM(-130, -310, 65,10, 90, 0, 90, motherboard);
+        ConnectorRAM powerConnectorB_2RAM2 = new ConnectorRAM(-130, -310, 65,10, 90, 0, 90, motherboard, on);
         powerConnectorB_2RAM2.init();
-        ConnectorRAM powerConnectorB_2RAM3 = new ConnectorRAM(-130, -190, 65,10, 90, 0, 90, motherboard);
+        ConnectorRAM powerConnectorB_2RAM3 = new ConnectorRAM(-130, -190, 65,10, 90, 0, 90, motherboard, on);
         powerConnectorB_2RAM3.init();
-        ConnectorRAM powerConnectorB_2RAM4 = new ConnectorRAM(-130, -90, 65,10, 90, 0, 90, motherboard);
+        ConnectorRAM powerConnectorB_2RAM4 = new ConnectorRAM(-130, -90, 65,10, 90, 0, 90, motherboard, on);
         powerConnectorB_2RAM4.init();
     }
 

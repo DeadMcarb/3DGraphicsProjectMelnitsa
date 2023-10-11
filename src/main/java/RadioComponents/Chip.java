@@ -9,8 +9,9 @@ public class Chip {
     int x, y, z, xAngle, yAngle, zAngle, width, height, depth = 6;
     Color color;
     GroupExtended group;
+    boolean on;
 
-    public Chip(int x, int y, int z, int width, int height, int xAngle, int yAngle, int zAngle, GroupExtended group, Color color) {
+    public Chip(int x, int y, int z, int width, int height, int xAngle, int yAngle, int zAngle, GroupExtended group, Color color, boolean on) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -21,6 +22,7 @@ public class Chip {
         this.yAngle = yAngle;
         this.zAngle = zAngle;
         this.group = group;
+        this.on = on;
     }
 
     public void setDepth(int depth){
@@ -30,7 +32,7 @@ public class Chip {
     public void init(){
         GroupExtended chip = new GroupExtended();
 
-        Panel chipset = new Panel(width, height, depth, color);
+        Panel chipset = new Panel(width, height, depth, color, on);
         chipset.setSpecular(color);
         chip.getChildren().add(chipset.getPanel());
 
@@ -52,7 +54,7 @@ public class Chip {
         int n = (height) / 4;
         int position = -((height) / 2);
         for (int i = 1; i <= n+1; i++) {
-            Panel p1 = new Panel(2, 3, 2, Color.SILVER);
+            Panel p1 = new Panel(2, 3, 2, Color.SILVER, on);
             p1.setSpecular(Color.WHITE);
             p1.setPosition((double) (width * side) /2, position, -2 + (depth / 3));
             p1.setRotate(0, 0,90);

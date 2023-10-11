@@ -19,36 +19,34 @@ public class Cooler {
     boolean on;
 
 
-   public Cooler(int x, int y, int z, int radius, int speed, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) {
-       this.x = x;
-       this.y = y;
-       this.z = z;
-       this.radius = radius;
-       this.speed = speed;
-       this.xAngle = xAngle;
-       this.yAngle = yAngle;
-       this.zAngle = zAngle;
-       this.group = group;
-       this.on = on;
-   }
-   public void init() {
-       Cylinder cylinder = new Cylinder(radius/5, 35);
-       PhongMaterial material = new PhongMaterial(Color.SADDLEBROWN);
-       material.setSpecularColor(Color.SADDLEBROWN);
-       cylinder.setMaterial(material);
-       Rotate rotate = new Rotate(90, Rotate.X_AXIS);
-       cylinder.getTransforms().add(rotate);
-       GroupExtended propeller = new GroupExtended();
-       propeller.getChildren().add(cylinder);
-       drawBlade(radius,1, 0, propeller);
-       drawBlade(radius,1, 60, propeller);
-       drawBlade(radius,1, 120, propeller);
-       drawBlade(radius,1, 180, propeller);
-       drawBlade(radius,-1, 60, propeller);
-       drawBlade(radius,-1, 120, propeller);
-       GroupExtended cooler = new GroupExtended();
-       drawCircle(radius, 35, cooler);
-       cooler.getChildren().add(propeller);
+    public Cooler(int x, int y, int z, int radius, int speed, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.radius = radius;
+        this.speed = speed;
+        this.xAngle = xAngle;
+        this.yAngle = yAngle;
+        this.zAngle = zAngle;
+        this.group = group;
+        this.on = on;
+    }
+
+    public void init() {
+        CylinderP cylinder = new CylinderP(radius / 5, 35, Color.SADDLEBROWN, on);
+        cylinder.setRotate(90, 0, 0);
+
+        GroupExtended propeller = new GroupExtended();
+        propeller.getChildren().add(cylinder.getCylinder());
+        drawBlade(radius, 1, 0, propeller, on);
+        drawBlade(radius, 1, 60, propeller, on);
+        drawBlade(radius, 1, 120, propeller, on);
+        drawBlade(radius, 1, 180, propeller, on);
+        drawBlade(radius, -1, 60, propeller, on);
+        drawBlade(radius, -1, 120, propeller, on);
+        GroupExtended cooler = new GroupExtended();
+        drawCircle(radius, 35, cooler, on);
+        cooler.getChildren().add(propeller);
 
         prepareAnimation(propeller, speed);
 
@@ -64,8 +62,8 @@ public class Cooler {
         group.getChildren().add(cooler);
     }
 
-    private static void drawCircle(int radius, int height, GroupExtended group) {
-        int n = (int) Math.ceil(10 * radius);
+    private void drawCircle(int radius, int height, GroupExtended group, boolean on) {
+        int n = (int) Math.ceil(1 * radius);
         double angleStep = 360.0 / n;
 
         for (int i = 0; i < n; i++) {
@@ -85,7 +83,7 @@ public class Cooler {
         }
     }
 
-    private static void drawBlade(int radius, int ox, int rAngle, GroupExtended group){
+    private static void drawBlade(int radius, int ox, int rAngle, GroupExtended group, boolean on) {
         Group blade = new Group();
         int width = Math.abs(ox);
         double height = radius / 4;
