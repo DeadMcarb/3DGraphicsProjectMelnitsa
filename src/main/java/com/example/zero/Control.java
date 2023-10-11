@@ -1,5 +1,6 @@
 package com.example.zero;
 
+import Components.CasePC;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.Camera;
@@ -21,12 +22,14 @@ public class Control {
     Stage stage;
     Camera camera;
     GroupExtended group;
+    CasePC casePC;
 
-    public Control(Scene scene, Stage stage, Camera camera, GroupExtended group){
+    public Control(Scene scene, Stage stage, Camera camera, GroupExtended group, CasePC casePC){
         this.scene = scene;
         this.stage = stage;
         this.camera = camera;
         this.group = group;
+        this.casePC = casePC;
     }
 
     public void EventHandler() {
@@ -74,6 +77,10 @@ public class Control {
                 case S -> camera.translateZProperty().set(camera.getTranslateZ() - 100);
                 case A -> camera.translateXProperty().set(camera.getTranslateX() + 10);
                 case D -> camera.translateXProperty().set(camera.getTranslateX() - 10);
+                case O -> {
+                    mode = !mode;
+                    casePC.redraw(mode);
+                }
                 case LEFT -> group.rotateByY(15);
                 case RIGHT -> group.rotateByY(-15);
                 case UP -> group.rotateByX(-15);

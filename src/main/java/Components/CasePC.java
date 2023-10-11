@@ -169,7 +169,7 @@ public class CasePC {
         powerSupply.init();
     }
     private void initMotherboard() {
-        Motherboard motherboard = new Motherboard(x, y, z+(-40), xAngle, yAngle, zAngle, group, true);
+        Motherboard motherboard = new Motherboard(x, y, z+(-40), xAngle, yAngle, zAngle, casePC, on);
         motherboard.init();
     }
 
