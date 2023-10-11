@@ -13,6 +13,7 @@ public class CasePC {
 
 
     int x, y, z, xAngle, yAngle, zAngle;
+    GroupExtended casePC = new GroupExtended();
     GroupExtended group;
     boolean on;
 
@@ -23,8 +24,14 @@ public class CasePC {
         this.on = on;
     }
 
+    public void redraw(boolean mode){
+        this.on = mode;
+        group.getChildren().remove(casePC);
+        casePC = new GroupExtended();
+        init();
+    }
+
     public void init() {
-        GroupExtended casePC = new GroupExtended();
 
         CylinderP back_left_cage = new CylinderP(4, 800, Color.WHITESMOKE, on);
         back_left_cage.setPosition(-150, 0, -400);
@@ -148,17 +155,17 @@ public class CasePC {
 
 
     private void initCoolers() {
-        Cooler cooler = new Cooler(x,y+(-220),z+400, 100, 10, xAngle, yAngle, zAngle, group, true);
-        Cooler cooler2 = new Cooler(x,y,z+400, 100, 10, xAngle, yAngle, zAngle, group, true);
-        Cooler cooler3 = new Cooler(x,y+220,z+400, 100, 10, xAngle, yAngle, zAngle, group, true);
-        Cooler cooler4 = new Cooler(x,y+(-220),z+(-400), 100, 10, xAngle, yAngle, zAngle, group, true);
+        Cooler cooler = new Cooler(x,y+(-220),z+400, 100, 10, xAngle, yAngle, zAngle, casePC, on);
+        Cooler cooler2 = new Cooler(x,y,z+400, 100, 10, xAngle, yAngle, zAngle, casePC, on);
+        Cooler cooler3 = new Cooler(x,y+220,z+400, 100, 10, xAngle, yAngle, zAngle, casePC, on);
+        Cooler cooler4 = new Cooler(x,y+(-220),z+(-400), 100, 10, xAngle, yAngle, zAngle, casePC, on);
         cooler.init();
         cooler2.init();
         cooler3.init();
         cooler4.init();
     }
     private void initPowerSupply() {
-        PowerSupply powerSupply = new PowerSupply(x, y, z+(-5), xAngle, yAngle, zAngle, group, true);
+        PowerSupply powerSupply = new PowerSupply(x, y, z+(-5), xAngle, yAngle, zAngle, casePC, on);
         powerSupply.init();
     }
     private void initMotherboard() {

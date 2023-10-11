@@ -16,6 +16,7 @@ public class Control {
     private double anchorAngleY = 0;
     private final DoubleProperty angleX = new SimpleDoubleProperty(0);
     private final DoubleProperty angleY = new SimpleDoubleProperty(0);
+    boolean mode = false;
     Scene scene;
     Stage stage;
     Camera camera;

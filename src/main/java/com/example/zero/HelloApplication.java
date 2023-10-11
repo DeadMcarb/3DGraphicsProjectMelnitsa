@@ -17,6 +17,8 @@ public class HelloApplication extends Application {
         CasePC case_PC = new CasePC(0,0,0,mainGroup, true);
         case_PC.init();
 
+
+
         Camera camera = new PerspectiveCamera(true);
         Scene scene = new Scene(mainGroup, 1440, 800, true);
         scene.setFill(Color.ROSYBROWN);
@@ -30,7 +32,7 @@ public class HelloApplication extends Application {
 
         mainGroup.rotateByX(15);
         mainGroup.rotateByY(125);
-        Control control = new Control(scene, stage, camera, mainGroup);
+        Control control = new Control(scene, stage, camera, mainGroup, case_PC);
         control.EventHandler();
 
         stage.setTitle("3D PC!");
