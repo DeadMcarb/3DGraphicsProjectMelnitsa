@@ -1,7 +1,6 @@
 package com.example.zero;
 
 import Components.*;
-import RadioComponents.Chip;
 import javafx.application.Application;
 import javafx.scene.*;
 import javafx.scene.paint.Color;
@@ -14,14 +13,14 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         GroupExtended mainGroup = new GroupExtended();
 
-        CasePC case_PC = new CasePC(0,0,0,mainGroup, true);
+        Airplane case_PC = new Airplane(0,0,0,mainGroup, true);
         case_PC.init();
 
 
 
         Camera camera = new PerspectiveCamera(true);
         Scene scene = new Scene(mainGroup, 1440, 800, true);
-        scene.setFill(Color.ROSYBROWN);
+        scene.setFill(Color.DEEPSKYBLUE);
         scene.setCamera(camera);
         camera.translateXProperty().set(0);
         camera.translateYProperty().set(0);
@@ -35,9 +34,10 @@ public class HelloApplication extends Application {
         Control control = new Control(scene, stage, camera, mainGroup, case_PC);
         control.EventHandler();
 
-        stage.setTitle("3D PC!");
+        stage.setTitle("airplane");
         stage.setScene(scene);
         stage.show();
+
     }
 
 

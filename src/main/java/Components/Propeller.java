@@ -7,19 +7,15 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.PhongMaterial;
-import javafx.scene.shape.Box;
-import javafx.scene.shape.Cylinder;
-import javafx.scene.shape.DrawMode;
 import javafx.scene.transform.Rotate;
 
-public class Cooler {
-    int x, y, z, radius, speed, xAngle, yAngle, zAngle;
+public class Propeller {
+    int x, y, z, radius, speed, xAngle, yAngle, zAngle, len_box, hie;
     GroupExtended group;
     boolean on;
 
 
-    public Cooler(int x, int y, int z, int radius, int speed, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on) {
+    public Propeller(int x, int y, int z, int radius, int speed, int xAngle, int yAngle, int zAngle, GroupExtended group, boolean on, int len_box, int hie) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -30,10 +26,12 @@ public class Cooler {
         this.zAngle = zAngle;
         this.group = group;
         this.on = on;
+        this.len_box = len_box;
+        this.hie = hie;
     }
 
     public void init() {
-        CylinderP cylinder = new CylinderP(radius / 5, 35, Color.SADDLEBROWN, on);
+        CylinderP cylinder = new CylinderP(radius / 5, 35, Color.DARKRED, on);
         cylinder.setRotate(90, 0, 0);
 
         GroupExtended propeller = new GroupExtended();
@@ -46,6 +44,7 @@ public class Cooler {
         drawBlade(radius, -1, 120, propeller, on);
         GroupExtended cooler = new GroupExtended();
         drawCircle(radius, 35, cooler, on);
+
         cooler.getChildren().add(propeller);
 
         prepareAnimation(propeller, speed);
@@ -71,12 +70,8 @@ public class Cooler {
             int x = (int) (radius * Math.cos(Math.toRadians(angle)));
             int y = (int) (radius * Math.sin(Math.toRadians(angle)));
             Panel box;
-            if (!((angle == 0) || (angle == 90) || (angle == 180) || (angle == 270))) {
-                box = new Panel(15, 20, height, Color.BEIGE, on);
-            } else {
-                box = new Panel(16, radius * 2 + 16, height, Color.BEIGE, on);
-            }
-            box.setPosition(x, y, 0);
+            box = new Panel(15, 20, height+len_box, Color.BEIGE, on);
+            box.setPosition(x, y, 400+hie);
             box.setSpecular(Color.BLACK);
             box.setRotate(0, 0, angle);
             group.getChildren().add(box.getPanel());
@@ -95,7 +90,7 @@ public class Cooler {
         double heightStep = (height + 5) / n;
 
         for (int i = 0; i < n; i++) {
-            Panel box = new Panel(height, width, 1, Color.SADDLEBROWN, on);
+            Panel box = new Panel(height, width, 1, Color.DARKRED, on);
             x += ox;
             box.setPosition(0, x, 0);
             angle += angleStep;
@@ -117,3 +112,4 @@ public class Cooler {
         timer.start();
     }
 }
+

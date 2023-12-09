@@ -1,6 +1,6 @@
 package com.example.zero;
 
-import Components.CasePC;
+import Components.Airplane;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.Camera;
@@ -22,9 +22,9 @@ public class Control {
     Stage stage;
     Camera camera;
     GroupExtended group;
-    CasePC casePC;
+    Airplane casePC;
 
-    public Control(Scene scene, Stage stage, Camera camera, GroupExtended group, CasePC casePC){
+    public Control(Scene scene, Stage stage, Camera camera, GroupExtended group, Airplane casePC){
         this.scene = scene;
         this.stage = stage;
         this.camera = camera;
